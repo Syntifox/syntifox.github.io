@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Portfolio BTS SIO SISR — Aswin PIRATHEEPAN</title>
+  <meta name="description" content="Portfolio professionnel BTS SIO option SISR — Aswin PIRATHEEPAN, étudiant en alternance à Paris School Of Technology and Business" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-inner">
+      <a href="#accueil" class="nav-logo">
+        <span class="logo-initials">AP</span>
+        <span class="logo-text">Aswin PIRATHEEPAN</span>
+      </a>
+      <button class="nav-toggle" id="navToggle" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#accueil">Accueil</a></li>
+        <li><a href="#parcours">Parcours</a></li>
+        <li><a href="#competences">Compétences</a></li>
+        <li><a href="#alternance">Alternance</a></li>
+        <li><a href="#veille">Veille</a></li>
+        <li><a href="#tableau">Tableau E5</a></li>
+        <li><a href="#contact" class="btn-nav">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero" id="accueil">
+    <div class="hero-bg">
+      <div class="grid-overlay"></div>
+      <div class="blob blob-1"></div>
+      <div class="blob blob-2"></div>
+    </div>
+    <div class="container hero-content">
+      <div class="hero-badge">
+        <span class="badge-dot"></span>
+        BTS SIO — Option SISR · En alternance
+      </div>
+      <h1 class="hero-title">
+        <span class="hero-greeting">Bonjour, je suis</span>
+        <strong>Aswin PIRATHEEPAN</strong>
+      </h1>
+      <p class="hero-subtitle">
+        Étudiant en <strong>Solutions d'Infrastructure, Systèmes et Réseaux</strong><br />
+        en alternance chez <strong>Clean Confiance</strong> à Aulnay-sous-Bois.<br />
+        Passionné par les réseaux, l'administration système et le support IT.
+      </p>
+      <div class="hero-tags">
+        <span class="tag">🖧 Réseaux</span>
+        <span class="tag">🔒 Cybersécurité</span>
+        <span class="tag">🐧 Linux</span>
+        <span class="tag">🪟 Windows Server</span>
+        <span class="tag">🛠️ Support IT</span>
+      </div>
+      <div class="hero-actions">
+        <a href="#alternance" class="btn btn-primary">Mon alternance</a>
+        <a href="assets/cv.pdf" class="btn btn-outline" target="_blank">Télécharger mon CV</a>
+      </div>
+    </div>
+    <a href="#parcours" class="hero-scroll" aria-label="Défiler">
+      <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+        <polyline points="6 9 12 15 18 9"></polyline>
+      </svg>
+    </a>
+  </section>
+
+  <!-- PARCOURS -->
+  <section class="section" id="parcours">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-label">Mon parcours</span>
+        <h2>Formation & Expériences</h2>
+      </div>
+      <div class="timeline">
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-card">
+            <span class="timeline-date">Jan. 2025 — Août 2026</span>
+            <h3>Alternant Support IT</h3>
+            <p class="timeline-org">Clean Confiance — Aulnay-sous-Bois</p>
+            <p>Déploiement de câblage réseau RJ45, support IT, gestion Active Directory, gestion du parc informatique et commandes de matériels.</p>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-card">
+            <span class="timeline-date">2023 — 2025</span>
+            <h3>BTS SIO — Option SISR</h3>
+            <p class="timeline-org">Paris School Of Technology and Business — Paris</p>
+            <p>Formation aux solutions d'infrastructure, systèmes et réseaux. Administration de serveurs, gestion des réseaux, sécurité informatique et virtualisation.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- COMPÉTENCES -->
+  <section class="section section-alt" id="competences">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-label">Savoir-faire</span>
+        <h2>Compétences Techniques</h2>
+        <p class="section-desc">Référentiel BTS SIO SISR — Blocs de compétences E4, E5 et E6</p>
+      </div>
+
+      <div class="tabs" id="skillTabs">
+        <button class="tab active" data-tab="infra">🖧 Infrastructure</button>
+        <button class="tab" data-tab="secu">🔒 Cybersécurité</button>
+        <button class="tab" data-tab="services">⚙️ Services réseau</button>
+        <button class="tab" data-tab="outils">🛠️ Outils</button>
+      </div>
+
+      <div class="tab-content active" id="tab-infra">
+        <div class="skills-grid">
+          <div class="skill-card">
+            <div class="skill-icon">🪟</div>
+            <h4>Windows Server & AD</h4>
+            <p>Active Directory, GPO, DNS, DHCP — administration et gestion du parc en entreprise réelle</p>
+            <div class="skill-bar"><div class="skill-fill" style="--w:80%"></div></div>
+          </div>
+          <div class="skill-card">
+            <div class="skill-icon">🐧</div>
+            <h4>Linux / Unix</h4>
+            <p>Administration serveur Debian/Ubuntu, scripting Bash, gestion des services systemd</p>
+            <div class="skill-bar"><div class="skill-fill" style="--w:70%"></div></div>
+          </div>
+          <div class="skill-card">
+            <div class="skill-icon">🔌</div>
+            <h4>Câblage réseau</h4>
+            <p>Déploiement de câblage RJ45, brassage en baie informatique, pose de prises réseau</p>
+            <div class="skill-bar"><div class="skill-fill" style="--w:85%"></div></div>
+          </div>
+          <div class="skill-card">
+            <div class="skill-icon">📦</div>
+            <h4>Virtualisation</h4>
+            <p>VMware ESXi, VirtualBox, Proxmox — création et gestion de VMs et conteneurs</p>
+            <div class="skill-bar"><div class="skill-fill" style="--w:65%"></div></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="tab-content" id="tab-secu">
+        <div class="skills-grid">
+          <div class="skill-card">
+            <div class="skill-icon">🔥</div>
+            <h4>Firewall</h4>
+            <p>pfSense, iptables — configuration des règles de filtrage et protection du réseau</p>
+            <div class="skill-bar"><div class="skill-fill" style="--w:65%"></div></div>
+          </div>
+          <div class="skill-card">
+            <div class="skill-icon">🔐</div>
+            <h4>VPN & Chiffrement</h4>
+            <p>OpenVPN, WireGuard — sécurisation des accès distants et tunnels chiffrés</p>
+            <div class="skill-bar"><div class="skill-fill" style="--w:60%"></div></div>
+          </div>
+          <div class="skill-card">
+            <div class="skill-icon">🔍</div>
+            <h4>Analyse réseau</h4>
+            <p>Wireshark, Nmap — capture de trames, diagnostic et détection d'anomalies réseau</p>
+            <div class="skill-bar"><div class="skill-fill" style="--w:65%"></div></div>
+          </div>
+          <div class="skill-card">
+            <div class="skill-icon">👥</div>
+            <h4>Gestion des droits AD</h4>
+            <p>Gestion fine des permissions, groupes de sécurité et délégation d'administration</p>
+            <div class="skill-bar"><div class="skill-fill" style="--w:80%"></div></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="tab-content" id="tab-services">
+        <div class="skills-grid">
+          <div class="skill-card">
+            <div class="skill-icon">🌐</div>
+            <h4>DNS / DHCP</h4>
+            <p>Configuration DNS intégré AD, ISC DHCP — maintenance des services réseau d'entreprise</p>
+            <div class="skill-bar"><div class="skill-fill" style="--w:75%"></div></div>
+          </div>
+          <div class="skill-card">
+            <div class="skill-icon">📡</div>
+            <h4>Réseaux TCP/IP</h4>
+            <p>Adressage IP, VLAN, routage, commutation, modèle OSI — conception et exploitation</p>
+            <div class="skill-bar"><div class="skill-fill" style="--w:75%"></div></div>
+          </div>
+          <div class="skill-card">
+            <div class="skill-icon">🖥️</div>
+            <h4>Support utilisateurs</h4>
+            <p>Assistance niveaux 1 et 2, diagnostic, résolution d'incidents, relation utilisateur</p>
+            <div class="skill-bar"><div class="skill-fill" style="--w:90%"></div></div>
+          </div>
+          <div class="skill-card">
+            <div class="skill-icon">🗄️</div>
+            <h4>Bases de données</h4>
+            <p>MySQL/MariaDB — installation, sécurisation et administration basique</p>
+            <div class="skill-bar"><div class="skill-fill" style="--w:55%"></div></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="tab-content" id="tab-outils">
+        <div class="skills-grid">
+          <div class="skill-card">
+            <div class="skill-icon">🐚</div>
+            <h4>Scripting</h4>
+            <p>PowerShell, Bash — automatisation de tâches d'administration et scripts système</p>
+            <div class="skill-bar"><div class="skill-fill" style="--w:65%"></div></div>
+          </div>
+          <div class="skill-card">
+            <div class="skill-icon">📋</div>
+            <h4>Gestion de parc (GLPI)</h4>
+            <p>Inventaire du parc, suivi des tickets, gestion des actifs et des demandes</p>
+            <div class="skill-bar"><div class="skill-fill" style="--w:80%"></div></div>
+          </div>
+          <div class="skill-card">
+            <div class="skill-icon">🔧</div>
+            <h4>Cisco / Packet Tracer</h4>
+            <p>Configuration de routeurs et switchs Cisco, simulation d'architectures réseau</p>
+            <div class="skill-bar"><div class="skill-fill" style="--w:65%"></div></div>
+          </div>
+          <div class="skill-card">
+            <div class="skill-icon">📝</div>
+            <h4>Documentation technique</h4>
+            <p>Rédaction de procédures, schémas réseau draw.io, guides d'utilisation</p>
+            <div class="skill-bar"><div class="skill-fill" style="--w:80%"></div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ALTERNANCE -->
+  <section class="section" id="alternance">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-label">Expérience professionnelle</span>
+        <h2>Mon Alternance</h2>
+      </div>
+
+      <div class="stages-grid" style="grid-template-columns:1fr;">
+        <div class="stage-card">
+          <div class="stage-period">
+            <span class="stage-year">2025</span>
+            <span class="stage-duration">18 mois</span>
+          </div>
+          <div class="stage-content">
+            <div class="stage-company-row">
+              <div class="stage-company-logo">🧹</div>
+              <div>
+                <h3>Clean Confiance</h3>
+                <p class="stage-poste">Alternant Support IT</p>
+                <p class="stage-lieu">📍 Aulnay-sous-Bois · Janvier 2025 — Août 2026</p>
+              </div>
+            </div>
+            <p class="stage-desc">
+              Au sein du service informatique de Clean Confiance, entreprise spécialisée dans le nettoyage,
+              j'interviens en tant qu'alternant support IT sur l'ensemble du site d'Aulnay-sous-Bois.
+              Je prends en charge l'infrastructure réseau physique, le parc informatique et l'assistance quotidienne aux utilisateurs.
+            </p>
+            <div class="stage-missions">
+              <h4>Missions principales :</h4>
+              <ul>
+                <li>Déploiement du câblage réseau RJ45 dans tous les bureaux du site, depuis la baie informatique</li>
+                <li>Support IT et assistance aux utilisateurs (niveaux 1 et 2)</li>
+                <li>Gestion de l'Active Directory : création de comptes, gestion des droits et des GPO</li>
+                <li>Gestion et inventaire du parc informatique</li>
+                <li>Commande, réception et installation de nouveaux matériels informatiques</li>
+              </ul>
+            </div>
+            <a href="assets/rapport-alternance.pdf" class="btn btn-outline btn-sm" target="_blank">📄 Rapport d'activité</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- VEILLE TECHNOLOGIQUE -->
+  <section class="section section-alt" id="veille">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-label">Actualité IT</span>
+        <h2>Veille Technologique</h2>
+        <p class="section-desc">Suivi de l'actualité en cybersécurité et infrastructures — sources et synthèses</p>
+      </div>
+
+      <div class="veille-intro">
+        <div class="veille-method">
+          <h3>Ma méthode de veille</h3>
+          <p>J'effectue une veille technologique régulière pour rester informé des évolutions du secteur IT, en particulier dans les domaines de la cybersécurité et des infrastructures réseaux. J'utilise plusieurs outils et sources pour une consultation quotidienne.</p>
+          <div class="veille-tools">
+            <span class="vtool">📰 Feedly (agrégateur RSS)</span>
+            <span class="vtool">🔔 Google Alertes</span>
+            <span class="vtool">💬 Reddit r/netsec</span>
+            <span class="vtool">📧 Newsletters CERT-FR</span>
+            <span class="vtool">🐦 Twitter/X #CyberSecurity</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="veille-grid">
+        <article class="veille-card">
+          <div class="veille-category">🔒 Cybersécurité</div>
+          <span class="veille-date">Mars 2025</span>
+          <h3>Évolution des ransomwares en 2025</h3>
+          <p>Analyse des nouvelles techniques utilisées par les groupes de ransomware (double extorsion, chiffrement partiel) et des stratégies de défense recommandées par l'ANSSI.</p>
+          <div class="veille-sources"><strong>Sources :</strong> ANSSI, CERT-FR, BleepingComputer</div>
+          <a href="veille/ransomware-2025.html" class="veille-link">Lire la synthèse →</a>
+        </article>
+        <article class="veille-card">
+          <div class="veille-category">☁️ Cloud & Infra</div>
+          <span class="veille-date">Février 2025</span>
+          <h3>Kubernetes et la conteneurisation en entreprise</h3>
+          <p>Montée en puissance de l'orchestration de conteneurs avec Kubernetes dans les PME. Analyse des enjeux de sécurité et des bonnes pratiques de déploiement.</p>
+          <div class="veille-sources"><strong>Sources :</strong> CNCF Blog, InfoQ, LeMagIT</div>
+          <a href="veille/kubernetes.html" class="veille-link">Lire la synthèse →</a>
+        </article>
+        <article class="veille-card">
+          <div class="veille-category">🌐 Réseaux</div>
+          <span class="veille-date">Janvier 2025</span>
+          <h3>Wi-Fi 7 : nouveautés et déploiement</h3>
+          <p>Le standard 802.11be améliore considérablement les débits et la latence. Tour d'horizon des nouveautés techniques et de l'impact sur les infrastructures réseau d'entreprise.</p>
+          <div class="veille-sources"><strong>Sources :</strong> Cisco Blog, ZDNet, The Register</div>
+          <a href="veille/wifi7.html" class="veille-link">Lire la synthèse →</a>
+        </article>
+      </div>
+
+      <div class="veille-more">
+        <a href="veille.html" class="btn btn-outline">Voir toutes mes veilles →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- TABLEAU SYNTHÈSE E5 -->
+  <section class="section" id="tableau">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-label">Référentiel BTS SIO</span>
+        <h2>Tableau de Synthèse E5</h2>
+        <p class="section-desc">Activités professionnelles réalisées en lien avec les compétences du référentiel SISR</p>
+      </div>
+      <div class="table-wrapper">
+        <table class="synthese-table">
+          <thead>
+            <tr>
+              <th>Activité</th>
+              <th>Contexte</th>
+              <th>Compétences SISR</th>
+              <th>Période</th>
+              <th>Fiche</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Déploiement câblage RJ45</strong></td>
+              <td>Alternance — Clean Confiance</td>
+              <td>B1.2 — Gérer les équipements réseau</td>
+              <td>Jan. 2025</td>
+              <td><a href="fiches/fiche-cablage.html" class="table-link">📄</a></td>
+            </tr>
+            <tr>
+              <td><strong>Gestion Active Directory</strong></td>
+              <td>Alternance — Clean Confiance</td>
+              <td>B2.1 — Exploiter un serveur Windows</td>
+              <td>2025</td>
+              <td><a href="fiches/fiche-ad.html" class="table-link">📄</a></td>
+            </tr>
+            <tr>
+              <td><strong>Gestion du parc informatique</strong></td>
+              <td>Alternance — Clean Confiance</td>
+              <td>B1.1 — Gérer le patrimoine informatique</td>
+              <td>2025</td>
+              <td><a href="fiches/fiche-parc.html" class="table-link">📄</a></td>
+            </tr>
+            <tr>
+              <td><strong>Support IT utilisateurs</strong></td>
+              <td>Alternance — Clean Confiance</td>
+              <td>B1.4 — Mettre en place la continuité de service</td>
+              <td>2025</td>
+              <td><a href="fiches/fiche-support.html" class="table-link">📄</a></td>
+            </tr>
+            <tr>
+              <td><strong>Configuration pare-feu pfSense</strong></td>
+              <td>TP École — Paris STBM</td>
+              <td>B3.1 — Protéger les données</td>
+              <td>2024</td>
+              <td><a href="fiches/fiche-pfsense.html" class="table-link">📄</a></td>
+            </tr>
+            <tr>
+              <td><strong>Virtualisation (TP)</strong></td>
+              <td>TP École — Paris STBM</td>
+              <td>B2.3 — Exploiter les solutions de virtualisation</td>
+              <td>2024</td>
+              <td><a href="fiches/fiche-virtualisation.html" class="table-link">📄</a></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="table-note">💡 Cliquez sur 📄 pour accéder à la fiche détaillée de chaque activité professionnelle.</p>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="section section-alt" id="contact">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-label">Me contacter</span>
+        <h2>Prenons contact</h2>
+      </div>
+      <div class="contact-grid">
+        <div class="contact-info">
+          <p class="contact-intro">Vous souhaitez en savoir plus sur mon parcours ou mes compétences ? N'hésitez pas à me contacter par e-mail ou via LinkedIn.</p>
+          <div class="contact-items">
+            <a href="mailto:p.aswin@outlook.fr" class="contact-item">
+              <span class="contact-icon">✉️</span>
+              <div>
+                <strong>E-mail</strong>
+                <span>p.aswin@outlook.fr</span>
+              </div>
+            </a>
+            <a href="https://www.linkedin.com/in/aswin-piratheepan" target="_blank" class="contact-item">
+              <span class="contact-icon">💼</span>
+              <div>
+                <strong>LinkedIn</strong>
+                <span>Aswin Piratheepan</span>
+              </div>
+            </a>
+          </div>
+          <a href="assets/cv.pdf" class="btn btn-primary" target="_blank">📄 Télécharger mon CV</a>
+        </div>
+        <div class="contact-form-wrapper">
+          <form class="contact-form" id="contactForm">
+            <div class="form-group">
+              <label for="name">Nom complet</label>
+              <input type="text" id="name" name="name" placeholder="Jean Dupont" required />
+            </div>
+            <div class="form-group">
+              <label for="email">Adresse e-mail</label>
+              <input type="email" id="email" name="email" placeholder="jean@exemple.fr" required />
+            </div>
+            <div class="form-group">
+              <label for="subject">Sujet</label>
+              <input type="text" id="subject" name="subject" placeholder="Demande d'informations" />
+            </div>
+            <div class="form-group">
+              <label for="message">Message</label>
+              <textarea id="message" name="message" rows="5" placeholder="Votre message..." required></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary btn-full">Envoyer le message</button>
+            <p class="form-note">Le formulaire ouvre votre client e-mail par défaut.</p>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div class="footer-left">
+        <span class="nav-logo">
+          <span class="logo-initials">AP</span>
+          <span class="logo-text">Aswin PIRATHEEPAN</span>
+        </span>
+        <p>BTS SIO SISR — Paris School Of Technology and Business</p>
+      </div>
+      <div class="footer-links">
+        <a href="#accueil">Accueil</a>
+        <a href="#competences">Compétences</a>
+        <a href="#alternance">Alternance</a>
+        <a href="#veille">Veille</a>
+        <a href="#contact">Contact</a>
+      </div>
+      <div class="footer-right">
+        <p>© 2025 Aswin PIRATHEEPAN — Tous droits réservés</p>
+        <p>Hébergé sur <a href="https://pages.github.com" target="_blank">GitHub Pages</a></p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
