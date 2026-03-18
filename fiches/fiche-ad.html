@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Fiche E5 — Gestion Active Directory · Aswin PIRATHEEPAN</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800;900&family=Instrument+Sans:ital,wght@0,400;0,500;0,600;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../css/style.css" />
+  <link rel="stylesheet" href="../css/subpage.css" />
+</head>
+<body>
+  <nav class="navbar scrolled">
+    <div class="nav-inner">
+      <a href="../index.html" class="nav-logo"><span class="logo-initials">AP</span><span class="logo-text">Aswin PIRATHEEPAN</span></a>
+      <ul class="nav-links">
+        <li><a href="../index.html#tableau">← Tableau E5</a></li>
+        <li><a href="../index.html#contact" class="btn-nav">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="page-hero">
+    <div class="container page-hero-inner">
+      <a href="../index.html#tableau" class="back-link">← Retour au tableau E5</a>
+      <div class="section-label">Fiche activité E5 · #02</div>
+      <h1>Gestion de l'Active Directory</h1>
+      <p>Administration quotidienne de l'Active Directory de Clean Confiance : gestion des comptes utilisateurs, groupes de sécurité et stratégies de groupe (GPO).</p>
+      <div class="page-meta">
+        <span class="meta-pill">📅 2025 (en cours)</span>
+        <span class="meta-pill">🏢 Clean Confiance</span>
+        <span class="meta-pill">⏱️ Activité continue</span>
+        <span class="meta-pill">👤 Individuel</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="page-body">
+    <div class="container">
+      <div class="page-layout">
+        <div class="page-content">
+
+          <h2>🎯 Contexte et objectifs</h2>
+          <p>Dans le cadre de mon alternance, j'ai été chargé d'administrer l'Active Directory de Clean Confiance. Cette mission comprend la gestion quotidienne des comptes utilisateurs (créations, modifications, désactivations), la gestion des groupes de sécurité et le déploiement de GPO pour standardiser les postes de travail.</p>
+          <div class="callout"><strong>Périmètre :</strong> Domaine Windows Server [version] — [X] utilisateurs — [X] postes clients Windows 10/11.</div>
+
+          <h2>🛠️ Tâches réalisées</h2>
+          <ul>
+            <li>Création et gestion des comptes utilisateurs (arrivées/départs/mutations)</li>
+            <li>Organisation de l'arborescence OU (unités organisationnelles par service)</li>
+            <li>Gestion des groupes de sécurité et des droits d'accès aux ressources partagées</li>
+            <li>Création et déploiement de GPO (fond d'écran, restrictions, mappage lecteurs)</li>
+            <li>Réinitialisation de mots de passe et déverrouillage de comptes</li>
+            <li>Jonction de nouveaux postes au domaine</li>
+          </ul>
+
+          <div class="code-block">
+<span class="comment"># Créer un utilisateur AD via PowerShell</span>
+<span class="cmd">New-ADUser</span> `
+    -Name <span class="val">"Prénom NOM"</span> `
+    -SamAccountName <span class="val">"p.nom"</span> `
+    -UserPrincipalName <span class="val">"p.nom@cleanconfiance.local"</span> `
+    -Path <span class="val">"OU=Service,DC=cleanconfiance,DC=local"</span> `
+    -AccountPassword (ConvertTo-SecureString <span class="val">"MotDePasse!"</span> -AsPlainText -Force) `
+    -Enabled <span class="val">$true</span>
+
+<span class="comment"># Ajouter au groupe</span>
+<span class="cmd">Add-ADGroupMember</span> -Identity <span class="val">"GRP_Service"</span> -Members <span class="val">"p.nom"</span>
+          </div>
+
+          <h2>✅ Résultats</h2>
+          <p>La gestion de l'AD est désormais structurée et documentée. Les GPO déployées ont permis de standardiser les environnements de travail et d'appliquer les politiques de sécurité de l'entreprise sur l'ensemble du parc. [Compléter avec les résultats réels].</p>
+
+          <h2>💡 Ce que j'ai appris</h2>
+          <p>Cette mission m'a permis de comprendre l'architecture d'un Active Directory en production et de maîtriser l'administration via la console ADUC et PowerShell. J'ai appris l'importance de la gestion rigoureuse des droits d'accès pour la sécurité du SI.</p>
+
+          <div class="callout-warn"><strong>À compléter :</strong> Nombre d'utilisateurs gérés, structure des OU, exemples de GPO déployées, captures d'écran ADUC.</div>
+
+        </div>
+        <aside class="page-sidebar">
+          <div class="sidebar-card">
+            <h3>Technologies</h3>
+            <div class="sidebar-tags">
+              <span class="sidebar-tag">Windows Server</span>
+              <span class="sidebar-tag">Active Directory</span>
+              <span class="sidebar-tag">PowerShell</span>
+              <span class="sidebar-tag">GPO</span>
+              <span class="sidebar-tag">DNS</span>
+              <span class="sidebar-tag">DHCP</span>
+            </div>
+          </div>
+          <div class="sidebar-card">
+            <h3>Compétences SISR</h3>
+            <div class="comp-list">
+              <div class="comp-list-item"><span class="comp-badge">B2.1</span>Exploiter un serveur Windows</div>
+              <div class="comp-list-item"><span class="comp-badge">B3.1</span>Protéger les données</div>
+            </div>
+          </div>
+          <div class="sidebar-card">
+            <h3>Statut</h3>
+            <p class="status-ok">Activité en cours</p>
+          </div>
+          <div class="sidebar-card">
+            <h3>Documents</h3>
+            <div class="sidebar-links">
+              <a href="../assets/rapport-alternance.pdf" class="btn btn-outline btn-sm" target="_blank">📄 Rapport d'activité</a>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <span style="color:var(--text-3);font-size:.82rem;">© 2025 Aswin PIRATHEEPAN — BTS SIO SISR</span>
+      <a href="../index.html" style="color:var(--cyan);font-size:.82rem;">← Retour au portfolio</a>
+    </div>
+  </footer>
+  <script src="../js/main.js"></script>
+</body>
+</html>

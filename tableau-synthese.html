@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tableau de Synthèse E5 — BTS SIO SISR</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,600;9..40,700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+  <style>
+    body { padding-top: var(--nav-h); }
+    .page-hero {
+      background: linear-gradient(135deg, var(--color-accent), #1e40af);
+      color: #fff;
+      padding: 56px 0 48px;
+      text-align: center;
+    }
+    .page-hero h1 { font-size: 2.4rem; margin-bottom: 12px; }
+    .page-hero p { opacity: .8; font-size: 1.1rem; }
+    .full-table-wrapper {
+      overflow-x: auto;
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      margin: 48px 0;
+    }
+    .full-table {
+      width: 100%;
+      border-collapse: collapse;
+      background: var(--color-surface);
+      font-size: .88rem;
+    }
+    .full-table thead { background: var(--color-accent); color: #fff; }
+    .full-table th {
+      padding: 14px 16px;
+      text-align: left;
+      font-size: .78rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: .06em;
+      white-space: nowrap;
+    }
+    .full-table td {
+      padding: 12px 16px;
+      border-bottom: 1px solid var(--color-border);
+      vertical-align: middle;
+    }
+    .full-table tbody tr:hover { background: var(--color-surface-2); }
+    .full-table tbody tr:last-child td { border-bottom: none; }
+    .comp-tag {
+      display: inline-block;
+      font-family: var(--font-mono);
+      font-size: .72rem;
+      background: var(--color-accent-light);
+      color: var(--color-accent);
+      padding: 2px 8px;
+      border-radius: 4px;
+      margin: 2px;
+    }
+    .ctx-badge {
+      display: inline-block;
+      font-size: .72rem;
+      font-weight: 700;
+      padding: 3px 10px;
+      border-radius: 4px;
+    }
+    .ctx-tp    { background: #fef3c7; color: #92400e; }
+    .ctx-stage { background: #d1fae5; color: #065f46; }
+    .ctx-projet{ background: #e0e7ff; color: #3730a3; }
+    .back-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 24px;
+      font-size: .88rem;
+      font-weight: 600;
+      color: var(--color-accent);
+    }
+    .back-btn:hover { text-decoration: underline; }
+  </style>
+</head>
+<body>
+
+  <nav class="navbar scrolled" id="navbar">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo">
+        <span class="logo-initials">AP</span>
+        <span class="logo-text">Aswin PIRATHEEPAN</span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="index.html">← Retour au portfolio</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="page-hero">
+    <div class="container">
+      <span class="section-label" style="background:rgba(255,255,255,.2);color:#fff;">Référentiel BTS SIO SISR</span>
+      <h1>Tableau de Synthèse E5</h1>
+      <p>Activités professionnelles réalisées en lien avec les compétences du référentiel</p>
+    </div>
+  </div>
+
+  <section class="section">
+    <div class="container">
+      <a href="index.html" class="back-btn">← Retour au portfolio</a>
+
+      <div class="full-table-wrapper">
+        <table class="full-table">
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>Activité professionnelle</th>
+              <th>Contexte</th>
+              <th>Compétences SISR mobilisées</th>
+              <th>Période</th>
+              <th>Durée</th>
+              <th>Fiche</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>1</strong></td>
+              <td><strong>Mise en place d'un Active Directory</strong><br><small style="color:var(--color-text-2)">Déploiement domaine Windows, GPO, DNS, DHCP</small></td>
+              <td><span class="ctx-badge ctx-tp">TP École</span></td>
+              <td>
+                <span class="comp-tag">B2.1</span>
+                <span class="comp-tag">B2.2</span>
+              </td>
+              <td>2023</td>
+              <td>2 semaines</td>
+              <td><a href="fiches/fiche-ad.html" class="table-link" title="Voir la fiche">📄</a></td>
+            </tr>
+            <tr>
+              <td><strong>2</strong></td>
+              <td><strong>Configuration pare-feu pfSense</strong><br><small style="color:var(--color-text-2)">Règles de filtrage, VPN, portail captif</small></td>
+              <td><span class="ctx-badge ctx-tp">TP École</span></td>
+              <td>
+                <span class="comp-tag">B3.1</span>
+                <span class="comp-tag">B3.2</span>
+              </td>
+              <td>2024</td>
+              <td>1 semaine</td>
+              <td><a href="fiches/fiche-pfsense.html" class="table-link">📄</a></td>
+            </tr>
+            <tr>
+              <td><strong>3</strong></td>
+              <td><strong>Virtualisation avec Proxmox VE</strong><br><small style="color:var(--color-text-2)">Création et gestion de VMs et LXC</small></td>
+              <td><span class="ctx-badge ctx-stage">Stage 1</span></td>
+              <td>
+                <span class="comp-tag">B2.3</span>
+                <span class="comp-tag">B2.4</span>
+              </td>
+              <td>2024</td>
+              <td>3 semaines</td>
+              <td><a href="fiches/fiche-proxmox.html" class="table-link">📄</a></td>
+            </tr>
+            <tr>
+              <td><strong>4</strong></td>
+              <td><strong>Audit de sécurité réseau</strong><br><small style="color:var(--color-text-2)">Scan, vulnérabilités, rapport d'audit</small></td>
+              <td><span class="ctx-badge ctx-projet">Projet</span></td>
+              <td>
+                <span class="comp-tag">B3.2</span>
+                <span class="comp-tag">B3.3</span>
+              </td>
+              <td>2024</td>
+              <td>2 semaines</td>
+              <td><a href="fiches/fiche-audit.html" class="table-link">📄</a></td>
+            </tr>
+            <tr>
+              <td><strong>5</strong></td>
+              <td><strong>Déploiement infrastructure réseau</strong><br><small style="color:var(--color-text-2)">VLANs, routage inter-VLAN, haute disponibilité</small></td>
+              <td><span class="ctx-badge ctx-stage">Stage 2</span></td>
+              <td>
+                <span class="comp-tag">B1.2</span>
+                <span class="comp-tag">B1.3</span>
+              </td>
+              <td>2025</td>
+              <td>4 semaines</td>
+              <td><a href="fiches/fiche-reseau.html" class="table-link">📄</a></td>
+            </tr>
+            <tr>
+              <td><strong>6</strong></td>
+              <td><strong>Supervision réseau avec Zabbix</strong><br><small style="color:var(--color-text-2)">Monitoring, alertes, tableaux de bord</small></td>
+              <td><span class="ctx-badge ctx-stage">Stage 2</span></td>
+              <td>
+                <span class="comp-tag">B2.5</span>
+                <span class="comp-tag">B2.6</span>
+              </td>
+              <td>2025</td>
+              <td>2 semaines</td>
+              <td><a href="fiches/fiche-zabbix.html" class="table-link">📄</a></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="veille-intro">
+        <h3>📌 Légende des compétences SISR</h3>
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:12px;margin-top:16px;">
+          <div><span class="comp-tag">B1</span> Gérer le patrimoine informatique</div>
+          <div><span class="comp-tag">B1.2</span> Gérer les équipements réseau et télécoms</div>
+          <div><span class="comp-tag">B1.3</span> Gérer le réseau local</div>
+          <div><span class="comp-tag">B2</span> Répondre aux incidents et aux demandes</div>
+          <div><span class="comp-tag">B2.1</span> Exploiter un serveur Windows</div>
+          <div><span class="comp-tag">B2.2</span> Exploiter un serveur Linux</div>
+          <div><span class="comp-tag">B2.3</span> Exploiter les solutions de virtualisation</div>
+          <div><span class="comp-tag">B2.4</span> Exploiter les solutions de stockage</div>
+          <div><span class="comp-tag">B2.5</span> Superviser l'infrastructure</div>
+          <div><span class="comp-tag">B3</span> Assurer la cybersécurité</div>
+          <div><span class="comp-tag">B3.1</span> Protéger les données</div>
+          <div><span class="comp-tag">B3.2</span> Assurer la cybersécurité</div>
+          <div><span class="comp-tag">B3.3</span> Gérer les incidents de sécurité</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <span>© 2025 Aswin PIRATHEEPAN — Portfolio BTS SIO SISR</span>
+      <a href="index.html">← Retour au portfolio</a>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

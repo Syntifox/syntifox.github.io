@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Fiche E5 — Déploiement câblage RJ45 · Aswin PIRATHEEPAN</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800;900&family=Instrument+Sans:ital,wght@0,400;0,500;0,600;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../css/style.css" />
+  <link rel="stylesheet" href="../css/subpage.css" />
+</head>
+<body>
+  <nav class="navbar scrolled">
+    <div class="nav-inner">
+      <a href="../index.html" class="nav-logo"><span class="logo-initials">AP</span><span class="logo-text">Aswin PIRATHEEPAN</span></a>
+      <ul class="nav-links">
+        <li><a href="../index.html#tableau">← Tableau E5</a></li>
+        <li><a href="../index.html#contact" class="btn-nav">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="page-hero">
+    <div class="container page-hero-inner">
+      <a href="../index.html#tableau" class="back-link">← Retour au tableau E5</a>
+      <div class="section-label">Fiche activité E5 · #01</div>
+      <h1>Déploiement du câblage réseau RJ45</h1>
+      <p>Installation complète du câblage réseau cuivre RJ45 dans les bureaux du site de Clean Confiance, depuis la baie informatique jusqu'aux postes de travail.</p>
+      <div class="page-meta">
+        <span class="meta-pill">📅 Janvier 2025</span>
+        <span class="meta-pill">🏢 Clean Confiance</span>
+        <span class="meta-pill">⏱️ 2 semaines</span>
+        <span class="meta-pill">👤 Individuel</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="page-body">
+    <div class="container">
+      <div class="page-layout">
+        <div class="page-content">
+
+          <h2>🎯 Contexte et objectifs</h2>
+          <p>À mon arrivée en alternance chez Clean Confiance, le réseau filaire du site d'Aulnay-sous-Bois était insuffisant : plusieurs bureaux ne disposaient pas de prises réseau RJ45, ce qui forçait les utilisateurs à se connecter en Wi-Fi avec des débits instables. L'objectif était de câbler l'ensemble des bureaux pour garantir des connexions filaires stables et sécurisées.</p>
+          <p>⚠️ <em>Note : Les détails techniques précis (marques, références, plan de câblage) sont à remplacer par les informations réelles de ton intervention.</em></p>
+
+          <div class="callout"><strong>Objectif principal :</strong> Déployer le câblage réseau RJ45 catégorie 6 dans l'ensemble des bureaux du site, depuis le patch panel de la baie informatique jusqu'aux postes utilisateurs.</div>
+
+          <h2>🛠️ Matériel utilisé</h2>
+          <ul>
+            <li>Câble réseau catégorie 6 (UTP) — [X] mètres</li>
+            <li>Prises murales RJ45 catégorie 6 — [X] unités</li>
+            <li>Patch panel 24 ports — baie informatique</li>
+            <li>Testeur de câble réseau</li>
+            <li>Outil de sertissage et outil de dénudage</li>
+            <li>Perceuse, goulottes de câblage</li>
+          </ul>
+
+          <h2>📋 Déroulement de l'intervention</h2>
+          <p>J'ai commencé par réaliser un relevé de terrain pour identifier les emplacements des futurs points de raccordement et estimer les longueurs de câble nécessaires. J'ai ensuite procédé au tirage des câbles en goulottes le long des plinthes et cloisons.</p>
+          <ul>
+            <li>Relevé terrain et plan de câblage (schéma draw.io)</li>
+            <li>Tirage des câbles depuis la baie jusqu'aux bureaux</li>
+            <li>Sertissage et connexion sur les prises murales RJ45</li>
+            <li>Raccordement sur le patch panel de la baie informatique</li>
+            <li>Tests de continuité et de performance avec le testeur de câble</li>
+            <li>Étiquetage de chaque port (baie ↔ prise) et mise à jour du plan réseau</li>
+          </ul>
+
+          <div class="code-block">
+<span class="comment"># Test de connectivité après câblage</span>
+<span class="cmd">ping</span> <span class="val">192.168.1.1</span> -n 10
+<span class="comment"># Vérification du débit</span>
+<span class="cmd">iperf3</span> -c <span class="val">192.168.1.254</span> -t 30
+          </div>
+
+          <h2>✅ Résultats</h2>
+          <p>[X] bureaux ont été câblés avec succès. Tous les ports ont été testés et validés. Les utilisateurs bénéficient désormais de connexions filaires stables avec des débits conformes au câblage catégorie 6. Le plan de câblage a été mis à jour et archivé dans la documentation réseau de l'entreprise.</p>
+
+          <h2>💡 Ce que j'ai appris</h2>
+          <p>Cette mission m'a permis de mettre en pratique les normes de câblage réseau (TIA-568, EN 50173) et de comprendre l'importance d'une documentation rigoureuse. J'ai développé une méthode de travail structurée pour les interventions physiques sur l'infrastructure réseau.</p>
+
+          <div class="callout-warn"><strong>À compléter :</strong> Ajoute ici les détails spécifiques de ton intervention — nombre exact de prises, longueur de câble, difficultés rencontrées, captures d'écran des tests.</div>
+
+        </div>
+        <aside class="page-sidebar">
+          <div class="sidebar-card">
+            <h3>Technologies</h3>
+            <div class="sidebar-tags">
+              <span class="sidebar-tag">RJ45 Cat.6</span>
+              <span class="sidebar-tag">Patch panel</span>
+              <span class="sidebar-tag">Baie réseau</span>
+              <span class="sidebar-tag">UTP</span>
+              <span class="sidebar-tag">TIA-568</span>
+            </div>
+          </div>
+          <div class="sidebar-card">
+            <h3>Compétences SISR</h3>
+            <div class="comp-list">
+              <div class="comp-list-item"><span class="comp-badge">B1.2</span>Gérer les équipements réseau et télécom</div>
+              <div class="comp-list-item"><span class="comp-badge">B1.1</span>Gérer le patrimoine informatique</div>
+            </div>
+          </div>
+          <div class="sidebar-card">
+            <h3>Statut</h3>
+            <p class="status-ok">Activité réalisée</p>
+          </div>
+          <div class="sidebar-card">
+            <h3>Documents</h3>
+            <div class="sidebar-links">
+              <a href="../assets/rapport-alternance.pdf" class="btn btn-outline btn-sm" target="_blank">📄 Rapport d'activité</a>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <span style="color:var(--text-3);font-size:.82rem;">© 2025 Aswin PIRATHEEPAN — BTS SIO SISR</span>
+      <a href="../index.html" style="color:var(--cyan);font-size:.82rem;">← Retour au portfolio</a>
+    </div>
+  </footer>
+  <script src="../js/main.js"></script>
+</body>
+</html>

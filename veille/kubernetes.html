@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Veille — Kubernetes en entreprise · Aswin PIRATHEEPAN</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800;900&family=Instrument+Sans:ital,wght@0,400;0,500;0,600;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../css/style.css" />
+  <link rel="stylesheet" href="../css/subpage.css" />
+</head>
+<body>
+  <nav class="navbar scrolled">
+    <div class="nav-inner">
+      <a href="../index.html" class="nav-logo"><span class="logo-initials">AP</span><span class="logo-text">Aswin PIRATHEEPAN</span></a>
+      <ul class="nav-links">
+        <li><a href="../veille.html">← Toutes les veilles</a></li>
+        <li><a href="../index.html#contact" class="btn-nav">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="page-hero">
+    <div class="container page-hero-inner">
+      <a href="../veille.html" class="back-link">← Retour à la veille</a>
+      <div class="section-label">Veille technologique · ☁️ Cloud & Infra</div>
+      <h1>Kubernetes et la conteneurisation en entreprise</h1>
+      <p>Montée en puissance de l'orchestration de conteneurs dans les PME — enjeux techniques, sécurité et bonnes pratiques.</p>
+      <div class="page-meta">
+        <span class="meta-pill">📅 Février 2025</span>
+        <span class="meta-pill">☁️ Cloud & Infra</span>
+        <span class="meta-pill">⏱️ Lecture 6 min</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="page-body">
+    <div class="container">
+      <div class="page-layout">
+        <div class="page-content">
+
+          <h2>📌 Pourquoi ce sujet ?</h2>
+          <p>La conteneurisation et Kubernetes sont de plus en plus présents dans les offres d'emploi en administration système. Après avoir étudié la virtualisation classique en cours, j'ai voulu comprendre comment les conteneurs s'inscrivent dans les infrastructures modernes.</p>
+
+          <h2>🐳 Docker et conteneurs — rappel</h2>
+          <p>Un conteneur est une unité logicielle légère qui regroupe une application et toutes ses dépendances. Contrairement à une machine virtuelle, il partage le noyau du système hôte, ce qui le rend beaucoup plus léger et rapide à démarrer.</p>
+          <div class="callout"><strong>Différence clé :</strong> VM = OS complet virtualisé. Conteneur = processus isolé partageant le noyau hôte. Les conteneurs démarrent en secondes vs minutes pour une VM.</div>
+
+          <h2>☸️ Kubernetes — l'orchestrateur</h2>
+          <p>Kubernetes (K8s) est un système open source développé par Google pour automatiser le déploiement, la mise à l'échelle et la gestion des applications conteneurisées. Il permet de gérer des clusters de serveurs hébergeant des centaines de conteneurs.</p>
+          <ul>
+            <li><strong>Pod :</strong> unité de base — un ou plusieurs conteneurs partageant des ressources</li>
+            <li><strong>Node :</strong> serveur (physique ou VM) qui exécute les pods</li>
+            <li><strong>Cluster :</strong> ensemble de nodes gérés par Kubernetes</li>
+            <li><strong>Service :</strong> point d'accès stable à un groupe de pods</li>
+            <li><strong>Ingress :</strong> gestion du trafic HTTP/S entrant</li>
+          </ul>
+
+          <h2>🔒 Enjeux de sécurité</h2>
+          <p>L'adoption de Kubernetes introduit de nouveaux risques qu'un administrateur systèmes doit maîtriser :</p>
+          <ul>
+            <li>Gestion des secrets (mots de passe, certificats) avec Kubernetes Secrets ou HashiCorp Vault</li>
+            <li>Contrôle d'accès basé sur les rôles (RBAC) — principe du moindre privilège</li>
+            <li>Sécurisation des images de conteneurs (scan de vulnérabilités)</li>
+            <li>Isolation réseau entre namespaces avec les Network Policies</li>
+            <li>Audit des accès à l'API Kubernetes</li>
+          </ul>
+
+          <h2>🔗 Lien avec ma formation</h2>
+          <p>La conteneurisation est une évolution naturelle de la virtualisation que j'étudie en cours. Les concepts de réseau (VLAN, isolation) et de sécurité (RBAC, principe du moindre privilège) que j'applique avec Active Directory se retrouvent directement dans Kubernetes.</p>
+
+          <div class="callout-warn"><strong>À compléter :</strong> Ajoute des exemples concrets, des statistiques d'adoption, un schéma d'architecture Kubernetes, et tes sources avec dates.</div>
+
+        </div>
+        <aside class="page-sidebar">
+          <div class="sidebar-card">
+            <h3>Sources consultées</h3>
+            <div class="comp-list">
+              <div class="comp-list-item">CNCF Blog</div>
+              <div class="comp-list-item">InfoQ</div>
+              <div class="comp-list-item">LeMagIT</div>
+              <div class="comp-list-item">Kubernetes.io (docs officielles)</div>
+            </div>
+          </div>
+          <div class="sidebar-card">
+            <h3>Technologies abordées</h3>
+            <div class="sidebar-tags">
+              <span class="sidebar-tag">Kubernetes</span>
+              <span class="sidebar-tag">Docker</span>
+              <span class="sidebar-tag">Helm</span>
+              <span class="sidebar-tag">RBAC</span>
+            </div>
+          </div>
+          <div class="sidebar-card">
+            <h3>Compétences liées</h3>
+            <div class="comp-list">
+              <div class="comp-list-item"><span class="comp-badge">B2.3</span>Virtualisation</div>
+              <div class="comp-list-item"><span class="comp-badge">B3.1</span>Protéger les données</div>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <span style="color:var(--text-3);font-size:.82rem;">© 2025 Aswin PIRATHEEPAN — BTS SIO SISR</span>
+      <a href="../veille.html" style="color:var(--cyan);font-size:.82rem;">← Toutes les veilles</a>
+    </div>
+  </footer>
+  <script src="../js/main.js"></script>
+</body>
+</html>

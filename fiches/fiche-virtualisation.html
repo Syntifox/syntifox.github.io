@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Fiche E5 — Virtualisation · Aswin PIRATHEEPAN</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800;900&family=Instrument+Sans:ital,wght@0,400;0,500;0,600;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../css/style.css" />
+  <link rel="stylesheet" href="../css/subpage.css" />
+</head>
+<body>
+  <nav class="navbar scrolled">
+    <div class="nav-inner">
+      <a href="../index.html" class="nav-logo"><span class="logo-initials">AP</span><span class="logo-text">Aswin PIRATHEEPAN</span></a>
+      <ul class="nav-links">
+        <li><a href="../index.html#tableau">← Tableau E5</a></li>
+        <li><a href="../index.html#contact" class="btn-nav">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="page-hero">
+    <div class="container page-hero-inner">
+      <a href="../index.html#tableau" class="back-link">← Retour au tableau E5</a>
+      <div class="section-label">Fiche activité E5 · #06</div>
+      <h1>Virtualisation — TP Proxmox / VirtualBox</h1>
+      <p>Mise en place d'un environnement virtualisé avec Proxmox VE et VirtualBox : création et gestion de machines virtuelles, réseaux virtuels et snapshots.</p>
+      <div class="page-meta">
+        <span class="meta-pill">📅 2024</span>
+        <span class="meta-pill">🏫 TP École</span>
+        <span class="meta-pill">⏱️ 2 semaines</span>
+        <span class="meta-pill">👤 Individuel</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="page-body">
+    <div class="container">
+      <div class="page-layout">
+        <div class="page-content">
+
+          <h2>🎯 Contexte et objectifs</h2>
+          <p>Dans le cadre du cours d'infrastructure, j'ai mis en place un hyperviseur Proxmox VE pour héberger plusieurs machines virtuelles simulant une infrastructure d'entreprise : serveur Windows, serveur Linux, client Windows et pare-feu.</p>
+          <div class="callout"><strong>Objectif :</strong> Déployer une infrastructure virtualisée complète — serveur AD Windows, serveur web Linux, routeur pfSense — sur Proxmox VE.</div>
+
+          <h2>🛠️ Réalisation</h2>
+          <ul>
+            <li>Installation de Proxmox VE sur serveur physique dédié</li>
+            <li>Configuration du réseau virtuel (bridges, VLAN)</li>
+            <li>Création de VMs : Windows Server 2022, Debian 12, pfSense</li>
+            <li>Configuration du stockage (LVM, images ISO)</li>
+            <li>Mise en place des snapshots pour restauration rapide</li>
+            <li>Tests de haute disponibilité et de restauration</li>
+          </ul>
+
+          <div class="code-block">
+<span class="comment"># Créer une VM via CLI Proxmox</span>
+<span class="cmd">qm create</span> <span class="val">100</span> --name <span class="val">"win-server"</span> --memory <span class="val">4096</span> \
+  --cores <span class="val">2</span> --net0 <span class="val">virtio,bridge=vmbr0</span> \
+  --cdrom <span class="val">local:iso/windows-server-2022.iso</span>
+
+<span class="comment"># Prendre un snapshot</span>
+<span class="cmd">qm snapshot</span> <span class="val">100</span> <span class="val">snap-avant-config</span> --description <span class="val">"Avant configuration AD"</span>
+          </div>
+
+          <h2>✅ Résultats</h2>
+          <p>L'infrastructure virtualisée est fonctionnelle. Les 3 VMs communiquent correctement via le réseau virtuel. Les snapshots permettent une restauration rapide en cas de mauvaise manipulation. L'environnement est utilisé pour tous les autres TPs du BTS.</p>
+
+          <h2>💡 Ce que j'ai appris</h2>
+          <p>La virtualisation m'a permis de comprendre comment optimiser les ressources matérielles et d'expérimenter différentes configurations sans risque. Proxmox m'a initié à la gestion d'un hyperviseur de type 1, proche des environnements professionnels.</p>
+
+          <div class="callout-warn"><strong>À compléter :</strong> Captures d'écran Proxmox, schéma de l'infrastructure virtuelle, configuration réseau, performances mesurées.</div>
+
+        </div>
+        <aside class="page-sidebar">
+          <div class="sidebar-card">
+            <h3>Technologies</h3>
+            <div class="sidebar-tags">
+              <span class="sidebar-tag">Proxmox VE</span>
+              <span class="sidebar-tag">VirtualBox</span>
+              <span class="sidebar-tag">KVM</span>
+              <span class="sidebar-tag">LXC</span>
+              <span class="sidebar-tag">Debian</span>
+              <span class="sidebar-tag">Windows Server</span>
+            </div>
+          </div>
+          <div class="sidebar-card">
+            <h3>Compétences SISR</h3>
+            <div class="comp-list">
+              <div class="comp-list-item"><span class="comp-badge">B2.3</span>Exploiter les solutions de virtualisation</div>
+              <div class="comp-list-item"><span class="comp-badge">B2.4</span>Exploiter les solutions de stockage</div>
+            </div>
+          </div>
+          <div class="sidebar-card"><h3>Statut</h3><p class="status-ok">Activité réalisée</p></div>
+          <div class="sidebar-card">
+            <h3>Documents</h3>
+            <div class="sidebar-links">
+              <a href="../assets/rapport-tp-virtualisation.pdf" class="btn btn-outline btn-sm" target="_blank">📄 Rapport TP</a>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <span style="color:var(--text-3);font-size:.82rem;">© 2025 Aswin PIRATHEEPAN — BTS SIO SISR</span>
+      <a href="../index.html" style="color:var(--cyan);font-size:.82rem;">← Retour au portfolio</a>
+    </div>
+  </footer>
+  <script src="../js/main.js"></script>
+</body>
+</html>

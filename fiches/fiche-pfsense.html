@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Fiche E5 — Configuration pfSense · Aswin PIRATHEEPAN</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800;900&family=Instrument+Sans:ital,wght@0,400;0,500;0,600;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../css/style.css" />
+  <link rel="stylesheet" href="../css/subpage.css" />
+</head>
+<body>
+  <nav class="navbar scrolled">
+    <div class="nav-inner">
+      <a href="../index.html" class="nav-logo"><span class="logo-initials">AP</span><span class="logo-text">Aswin PIRATHEEPAN</span></a>
+      <ul class="nav-links">
+        <li><a href="../index.html#tableau">← Tableau E5</a></li>
+        <li><a href="../index.html#contact" class="btn-nav">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="page-hero">
+    <div class="container page-hero-inner">
+      <a href="../index.html#tableau" class="back-link">← Retour au tableau E5</a>
+      <div class="section-label">Fiche activité E5 · #05</div>
+      <h1>Configuration d'un pare-feu pfSense</h1>
+      <p>Installation et configuration d'un pare-feu pfSense en environnement de TP : règles de filtrage, DMZ, VPN et portail captif.</p>
+      <div class="page-meta">
+        <span class="meta-pill">📅 2024</span>
+        <span class="meta-pill">🏫 TP École</span>
+        <span class="meta-pill">⏱️ 1 semaine</span>
+        <span class="meta-pill">👤 Individuel</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="page-body">
+    <div class="container">
+      <div class="page-layout">
+        <div class="page-content">
+
+          <h2>🎯 Contexte et objectifs</h2>
+          <p>Dans le cadre d'un TP de sécurité réseau, j'ai installé et configuré un pare-feu pfSense pour protéger un réseau d'entreprise simulé. L'objectif était de mettre en place une politique de filtrage réseau, une zone DMZ et un VPN pour les accès distants.</p>
+          <div class="callout"><strong>Topologie :</strong> Internet → pfSense → LAN (192.168.1.0/24) + DMZ (192.168.2.0/24) — environnement virtualisé VirtualBox.</div>
+
+          <h2>🛠️ Configuration réalisée</h2>
+          <ul>
+            <li>Installation de pfSense 2.7 sur machine virtuelle</li>
+            <li>Configuration des interfaces WAN, LAN et DMZ</li>
+            <li>Mise en place des règles de filtrage (whitelist/blacklist par port et IP)</li>
+            <li>Création d'une zone DMZ pour isoler un serveur web</li>
+            <li>Configuration du VPN OpenVPN pour accès distant sécurisé</li>
+            <li>Mise en place du portail captif pour le Wi-Fi invité</li>
+            <li>Activation et analyse des logs de connexion</li>
+          </ul>
+
+          <div class="code-block">
+<span class="comment"># Règle de filtrage — bloquer tout sauf HTTP/HTTPS depuis LAN</span>
+<span class="comment"># Interface LAN → WAN</span>
+Action : <span class="val">Pass</span>  Protocol : <span class="val">TCP</span>  Source : <span class="val">LAN net</span>
+Destination : <span class="val">any</span>  Port : <span class="val">80, 443</span>
+
+<span class="comment"># Bloquer le reste</span>
+Action : <span class="val">Block</span>  Protocol : <span class="val">any</span>  Source : <span class="val">LAN net</span>
+Destination : <span class="val">any</span>
+          </div>
+
+          <h2>✅ Résultats</h2>
+          <p>Le pare-feu est opérationnel avec les règles de filtrage configurées. La DMZ isole correctement le serveur web du LAN interne. Le VPN OpenVPN permet un accès distant chiffré. Les logs confirment le bon fonctionnement du filtrage.</p>
+
+          <h2>💡 Ce que j'ai appris</h2>
+          <p>Ce TP m'a permis de comprendre le fonctionnement d'un pare-feu stateful et les principes de la segmentation réseau. J'ai compris l'importance d'une politique de sécurité claire avant toute configuration.</p>
+
+          <div class="callout-warn"><strong>À compléter :</strong> Schéma réseau, captures d'écran de l'interface pfSense, résultats des tests de filtrage, configuration VPN.</div>
+
+        </div>
+        <aside class="page-sidebar">
+          <div class="sidebar-card">
+            <h3>Technologies</h3>
+            <div class="sidebar-tags">
+              <span class="sidebar-tag">pfSense 2.7</span>
+              <span class="sidebar-tag">OpenVPN</span>
+              <span class="sidebar-tag">TCP/IP</span>
+              <span class="sidebar-tag">VLAN</span>
+              <span class="sidebar-tag">DMZ</span>
+              <span class="sidebar-tag">VirtualBox</span>
+            </div>
+          </div>
+          <div class="sidebar-card">
+            <h3>Compétences SISR</h3>
+            <div class="comp-list">
+              <div class="comp-list-item"><span class="comp-badge">B3.1</span>Protéger les données</div>
+              <div class="comp-list-item"><span class="comp-badge">B3.2</span>Assurer la cybersécurité</div>
+            </div>
+          </div>
+          <div class="sidebar-card"><h3>Statut</h3><p class="status-ok">Activité réalisée</p></div>
+          <div class="sidebar-card">
+            <h3>Documents</h3>
+            <div class="sidebar-links">
+              <a href="../assets/rapport-tp-pfsense.pdf" class="btn btn-outline btn-sm" target="_blank">📄 Rapport TP</a>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <span style="color:var(--text-3);font-size:.82rem;">© 2025 Aswin PIRATHEEPAN — BTS SIO SISR</span>
+      <a href="../index.html" style="color:var(--cyan);font-size:.82rem;">← Retour au portfolio</a>
+    </div>
+  </footer>
+  <script src="../js/main.js"></script>
+</body>
+</html>
