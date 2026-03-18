@@ -2,7 +2,7 @@
 
 Portfolio professionnel pour l'épreuve BTS SIO option **SISR** (Solutions d'Infrastructure, Systèmes et Réseaux), hébergé gratuitement sur **GitHub Pages**.
 
-**🌐 Site en ligne :** [https://ton-username.github.io](https://ton-username.github.io)
+**🌐 Site en ligne :** [https://syntifox.github.io](https://syntifox.github.io)
 
 ---
 
