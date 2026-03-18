@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Veille Technologique — Portfolio BTS SIO SISR</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,600;9..40,700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+  <style>
+    body { padding-top: var(--nav-h); }
+    .page-hero {
+      background: linear-gradient(135deg, #0f172a, #1e3a5f);
+      color: #fff;
+      padding: 56px 0 48px;
+      text-align: center;
+    }
+    .page-hero h1 { font-size: 2.4rem; margin-bottom: 12px; }
+    .page-hero p { opacity: .8; font-size: 1.05rem; max-width: 560px; margin: 0 auto; }
+    .filter-bar {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      justify-content: center;
+      margin-bottom: 36px;
+    }
+    .filter-btn {
+      padding: 8px 18px;
+      border: 2px solid var(--color-border);
+      border-radius: 20px;
+      background: var(--color-surface);
+      font-family: var(--font-body);
+      font-size: .85rem;
+      font-weight: 600;
+      cursor: pointer;
+      color: var(--color-text-2);
+      transition: all .2s;
+    }
+    .filter-btn:hover, .filter-btn.active {
+      background: var(--color-accent);
+      border-color: var(--color-accent);
+      color: #fff;
+    }
+    .veille-full-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      gap: 24px;
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="navbar scrolled">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo">
+        <span class="logo-initials">AP</span>
+        <span class="logo-text">Aswin PIRATHEEPAN</span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="index.html">← Retour au portfolio</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="page-hero">
+    <div class="container">
+      <span class="section-label" style="background:rgba(255,255,255,.15);color:#fff;margin-bottom:16px;display:inline-block;">Actualité IT</span>
+      <h1>Veille Technologique</h1>
+      <p>Suivi régulier des évolutions en cybersécurité, réseaux et infrastructures — synthèses et analyses personnelles</p>
+    </div>
+  </div>
+
+  <section class="section">
+    <div class="container">
+      <div class="filter-bar">
+        <button class="filter-btn active" data-filter="all">Tout afficher</button>
+        <button class="filter-btn" data-filter="secu">🔒 Cybersécurité</button>
+        <button class="filter-btn" data-filter="cloud">☁️ Cloud & Infra</button>
+        <button class="filter-btn" data-filter="reseau">🌐 Réseaux</button>
+        <button class="filter-btn" data-filter="systemes">🖥️ Systèmes</button>
+      </div>
+
+      <div class="veille-full-grid">
+        <article class="veille-card" data-category="secu">
+          <div class="veille-category">🔒 Cybersécurité</div>
+          <span class="veille-date">Mars 2025</span>
+          <h3>Évolution des ransomwares en 2025</h3>
+          <p>Analyse des nouvelles techniques (double extorsion, chiffrement partiel) et des stratégies de défense recommandées par l'ANSSI.</p>
+          <div class="veille-sources"><strong>Sources :</strong> ANSSI, CERT-FR, BleepingComputer</div>
+          <a href="veille/ransomware-2025.html" class="veille-link">Lire la synthèse →</a>
+        </article>
+
+        <article class="veille-card" data-category="cloud">
+          <div class="veille-category">☁️ Cloud & Infra</div>
+          <span class="veille-date">Février 2025</span>
+          <h3>Kubernetes et la conteneurisation en entreprise</h3>
+          <p>Montée en puissance de l'orchestration de conteneurs. Enjeux de sécurité et bonnes pratiques de déploiement.</p>
+          <div class="veille-sources"><strong>Sources :</strong> CNCF Blog, InfoQ, LeMagIT</div>
+          <a href="veille/kubernetes.html" class="veille-link">Lire la synthèse →</a>
+        </article>
+
+        <article class="veille-card" data-category="reseau">
+          <div class="veille-category">🌐 Réseaux</div>
+          <span class="veille-date">Janvier 2025</span>
+          <h3>Wi-Fi 7 : nouveautés et déploiement</h3>
+          <p>Le standard 802.11be améliore considérablement débits et latence. Impact sur les infrastructures réseau d'entreprise.</p>
+          <div class="veille-sources"><strong>Sources :</strong> Cisco Blog, ZDNet, The Register</div>
+          <a href="veille/wifi7.html" class="veille-link">Lire la synthèse →</a>
+        </article>
+
+        <article class="veille-card" data-category="secu">
+          <div class="veille-category">🔒 Cybersécurité</div>
+          <span class="veille-date">Décembre 2024</span>
+          <h3>Zero Trust : modèle de sécurité pour les entreprises</h3>
+          <p>Adoption croissante du modèle Zero Trust. Principes, mise en œuvre et outils disponibles pour les PME et grandes entreprises.</p>
+          <div class="veille-sources"><strong>Sources :</strong> NIST, Palo Alto Networks, Gartner</div>
+          <a href="#" class="veille-link">Lire la synthèse →</a>
+        </article>
+
+        <article class="veille-card" data-category="systemes">
+          <div class="veille-category">🖥️ Systèmes</div>
+          <span class="veille-date">Novembre 2024</span>
+          <h3>Windows Server 2025 : nouvelles fonctionnalités</h3>
+          <p>Tour d'horizon des nouveautés de Windows Server 2025 : Hotpatch, améliorations AD, sécurité renforcée et intégration cloud.</p>
+          <div class="veille-sources"><strong>Sources :</strong> Microsoft Blog, Petri.com, 4sysops</div>
+          <a href="#" class="veille-link">Lire la synthèse →</a>
+        </article>
+
+        <article class="veille-card" data-category="cloud">
+          <div class="veille-category">☁️ Cloud & Infra</div>
+          <span class="veille-date">Octobre 2024</span>
+          <h3>Infrastructure as Code : Terraform en pratique</h3>
+          <p>Popularisation d'IaC avec Terraform. Avantages pour la reproductibilité, la scalabilité et la gestion des configurations d'infrastructure.</p>
+          <div class="veille-sources"><strong>Sources :</strong> HashiCorp Blog, DevOps.com</div>
+          <a href="#" class="veille-link">Lire la synthèse →</a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <span>© 2025 Aswin PIRATHEEPAN — Portfolio BTS SIO SISR</span>
+      <a href="index.html">← Retour au portfolio</a>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+  <script>
+    // Filter functionality
+    const filterBtns = document.querySelectorAll('.filter-btn');
+    const veillCards = document.querySelectorAll('.veille-card[data-category]');
+    filterBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        filterBtns.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        const filter = btn.dataset.filter;
+        veillCards.forEach(card => {
+          card.style.display = (filter === 'all' || card.dataset.category === filter) ? '' : 'none';
+        });
+      });
+    });
+  </script>
+</body>
+</html>
