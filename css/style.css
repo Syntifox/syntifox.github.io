@@ -17,8 +17,8 @@
   --border:     rgba(255,255,255,.07);
   --border-2:   rgba(255,255,255,.13);
   --text:       #f0ede8;
-  --text-2:     #8a95a3;
-  --text-3:     #3d4a5c;
+  --text-2:     #b0b8c4;
+  --text-3:     #6b7a8d;
   --cyan:       #00d4ff;
   --cyan-dim:   rgba(0,212,255,.1);
   --cyan-glow:  rgba(0,212,255,.22);
@@ -218,7 +218,7 @@ ul { list-style: none; }
 }
 .stat-item:last-child { border-right: none; }
 .stat-number { font-family: var(--font-d); font-size: 2.2rem; font-weight: 800; color: var(--cyan); letter-spacing: -.04em; }
-.stat-label { font-size: .68rem; color: var(--text-3); font-family: var(--font-m); letter-spacing: .1em; text-transform: uppercase; }
+.stat-label { font-size: .68rem; color: var(--text-2); font-family: var(--font-m); letter-spacing: .1em; text-transform: uppercase; }
 
 /* TIMELINE */
 .timeline { position: relative; max-width: 740px; }
@@ -326,8 +326,8 @@ ul { list-style: none; }
 .table-wrapper { overflow-x: auto; border: 1px solid var(--border); border-radius: var(--r); }
 .synthese-table { width: 100%; border-collapse: collapse; background: var(--surface); font-size: .87rem; }
 .synthese-table thead { background: var(--bg-3); border-bottom: 1px solid rgba(0,212,255,.15); }
-.synthese-table th { padding: 16px 20px; text-align: left; font-family: var(--font-m); font-size: .66rem; font-weight: 500; color: var(--cyan); letter-spacing: .12em; text-transform: uppercase; white-space: nowrap; }
-.synthese-table td { padding: 14px 20px; border-bottom: 1px solid var(--border); vertical-align: middle; color: var(--text-2); }
+.synthese-table th { padding: 16px 20px; text-align: left; font-family: var(--font-m); font-size: .72rem; font-weight: 600; color: var(--cyan); letter-spacing: .12em; text-transform: uppercase; white-space: nowrap; }
+.synthese-table td { padding: 14px 20px; border-bottom: 1px solid var(--border); vertical-align: middle; color: var(--text); }
 .synthese-table td strong { color: var(--text); font-weight: 600; }
 .synthese-table tbody tr:hover { background: var(--bg-3); }
 .synthese-table tbody tr:last-child td { border-bottom: none; }
