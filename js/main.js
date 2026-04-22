@@ -75,7 +75,7 @@ if (contactForm) {
     const subject = document.getElementById('subject')?.value || 'Contact depuis portfolio';
     const message = document.getElementById('message')?.value || '';
     const body = `Bonjour,\n\nJe m'appelle ${name} (${email}).\n\n${message}`;
-    window.location.href = `mailto:votre@email.fr?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    window.location.href = `mailto:p.aswin@outlook.fr?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
   });
 }
 
