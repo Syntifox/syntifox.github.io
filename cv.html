@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CV — Aswin PIRATHEEPAN</title>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Sora:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<style>
+:root{--bg:#0d0f14;--surface:#13161e;--border:#1e2330;--accent:#3b82f6;--green:#22c55e;--yellow:#f59e0b;--text:#e2e8f0;--muted:#64748b;--mono:'JetBrains Mono',monospace;--sans:'Sora',sans-serif}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--text);font-family:var(--sans);min-height:100vh}
+a{color:var(--accent);text-decoration:none}
+nav{display:flex;align-items:center;justify-content:space-between;padding:1rem 2rem;border-bottom:1px solid var(--border);background:var(--surface);position:sticky;top:0;z-index:100}
+.nav-logo{font-weight:700;font-size:1rem;color:var(--text)}
+.nav-links{display:flex;gap:1.5rem}
+.nav-links a{font-size:13px;color:var(--muted);transition:color .2s}
+.nav-links a:hover,.nav-links a.active{color:var(--text)}
+.container{max-width:900px;margin:0 auto;padding:3rem 1.5rem}
+.section-tag{font-size:11px;font-family:var(--mono);color:var(--accent);letter-spacing:.15em;text-transform:uppercase;margin-bottom:.5rem}
+h1{font-size:2.2rem;font-weight:700;line-height:1.2;margin-bottom:.75rem}
+h2{font-size:1.3rem;font-weight:700;margin-bottom:1rem}
+p{color:var(--muted);line-height:1.7;font-size:.95rem;margin-bottom:.8rem}
+p strong{color:var(--text)}
+.card{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:1.5rem;margin-bottom:1rem}
+.card h3{font-size:1rem;font-weight:700;margin-bottom:.5rem}
+.grid-2{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+@media(max-width:600px){.grid-2{grid-template-columns:1fr}}
+.badge{display:inline-flex;padding:3px 10px;border-radius:20px;font-size:11px;font-weight:600;font-family:var(--mono);background:rgba(59,130,246,.15);color:var(--accent);border:1px solid rgba(59,130,246,.3);margin:2px}
+.tag-green{background:rgba(34,197,94,.15);color:var(--green);border-color:rgba(34,197,94,.3)}
+.tag-yellow{background:rgba(245,158,11,.15);color:var(--yellow);border-color:rgba(245,158,11,.3)}
+.tag-purple{background:rgba(139,92,246,.15);color:#8b5cf6;border-color:rgba(139,92,246,.3)}
+footer{text-align:center;padding:2rem;font-family:var(--mono);font-size:11px;color:var(--muted);border-top:1px solid var(--border);margin-top:4rem}
+.hr{height:1px;background:var(--border);margin:2rem 0}
+.skill-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:12px;margin-top:1.5rem}
+.skill-card{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:1.2rem}
+.skill-icon{font-size:1.5rem;margin-bottom:.5rem}
+.skill-title{font-size:.9rem;font-weight:700;margin-bottom:.5rem}
+.skill-items{font-size:.8rem;color:var(--muted);line-height:1.6}
+.timeline{display:flex;flex-direction:column;gap:1.2rem}
+.tl-item{display:flex;gap:1rem}
+.tl-dot{width:10px;height:10px;border-radius:50%;background:var(--accent);flex-shrink:0;margin-top:6px}
+.tl-date{font-family:var(--mono);font-size:11px;color:var(--accent);margin-bottom:2px}
+.tl-title{font-size:.95rem;font-weight:700}
+.tl-sub{font-size:.85rem;color:var(--muted)}
+.veille-card{background:var(--surface);border:1px solid var(--border);border-radius:14px;overflow:hidden;margin-bottom:1rem}
+.veille-header{background:linear-gradient(135deg,rgba(59,130,246,.2),rgba(6,182,212,.1));padding:1.5rem;border-bottom:1px solid var(--border)}
+.veille-body{padding:1.5rem}
+.contact-links{display:flex;gap:1rem;flex-wrap:wrap;margin-top:1rem}
+.contact-btn{display:inline-flex;align-items:center;gap:8px;padding:10px 20px;border-radius:10px;font-size:13px;font-weight:600;border:1px solid var(--border);background:var(--surface);color:var(--text);transition:border-color .2s}
+.contact-btn:hover{border-color:var(--accent)}
+.stat-row{display:flex;gap:1rem;flex-wrap:wrap;margin:1.5rem 0}
+.stat{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:1rem 1.5rem;text-align:center}
+.stat-n{font-size:1.8rem;font-weight:700;color:var(--accent)}
+.stat-l{font-size:12px;color:var(--muted);margin-top:2px}
+.proj-grid{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+@media(max-width:600px){.proj-grid{grid-template-columns:1fr}}
+.proj-num{font-family:var(--mono);font-size:10px;color:var(--accent);margin-bottom:4px}
+.proj-title{font-size:.95rem;font-weight:700;margin-bottom:.4rem}
+.proj-desc{font-size:.82rem;color:var(--muted);line-height:1.5;margin-bottom:.8rem}
+</style>
+
+</head>
+<body>
+<nav>
+  <span class="nav-logo">Aswin PIRATHEEPAN</span>
+  <div class="nav-links">
+    <a href="index.html">Accueil</a>
+    <a href="presentation.html">Présentation</a>
+    <a href="cv.html" class="active">CV</a>
+    <a href="projets.html">Projets</a>
+    <a href="e5.html">E5</a>
+    <a href="e6.html">E6</a>
+    <a href="veilles.html">Veilles</a>
+  </div>
+</nav>
+
+<div class="container">
+  <div class="section-tag">Parcours</div>
+  <h1>Formation & Expériences</h1>
+
+  <div class="hr"></div>
+  <h2>🎓 Formation</h2>
+  <div class="timeline">
+    <div class="tl-item">
+      <div class="tl-dot"></div>
+      <div>
+        <div class="tl-date">2024 — 2026</div>
+        <div class="tl-title">BTS SIO — Option SISR</div>
+        <div class="tl-sub">Paris School of Technology and Business · En alternance</div>
+        <p style="margin-top:.5rem">Spécialisation en Solutions d'Infrastructure, Systèmes et Réseaux. Administration Windows Server, cybersécurité, virtualisation, gestion de parc.</p>
+      </div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-dot" style="background:var(--muted)"></div>
+      <div>
+        <div class="tl-date">2021 — 2024</div>
+        <div class="tl-title">Baccalauréat Général</div>
+        <div class="tl-sub">Lycée · Île-de-France</div>
+        <p style="margin-top:.5rem">Obtenu avec mention. Formation générale préparant aux études supérieures.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="hr"></div>
+  <h2>💼 Expériences professionnelles</h2>
+  <div class="timeline">
+    <div class="tl-item">
+      <div class="tl-dot"></div>
+      <div>
+        <div class="tl-date">2024 — Présent</div>
+        <div class="tl-title">Technicien Informatique — Alternance</div>
+        <div class="tl-sub">Clean Confiance · Île-de-France</div>
+        <p style="margin-top:.5rem">Support informatique utilisateurs · Gestion parc informatique · Administration systèmes Windows · Création et gestion comptes utilisateurs.</p>
+        <div style="margin-top:.5rem">
+          <span class="badge">Support N1/N2</span>
+          <span class="badge tag-green">Windows Server</span>
+          <span class="badge tag-yellow">Gestion parc</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="hr"></div>
+  <h2>🏅 Certifications & Formations complémentaires</h2>
+  <div class="card">
+    <div class="proj-num">EN COURS</div>
+    <div class="proj-title">TryHackMe — Cybersécurité</div>
+    <p>Plateforme de formation pratique en cybersécurité : CTF, pentest, sécurité réseau, analyse de vulnérabilités.</p>
+    <span class="badge tag-purple">Cybersécurité</span>
+    <span class="badge tag-purple">CTF</span>
+  </div>
+  <div class="card">
+    <div class="proj-num">MAÎTRISÉ</div>
+    <div class="proj-title">Anglais — Niveau bilingue</div>
+    <p>Niveau quasi-bilingue attesté par les épreuves blanches BTS (17-19/20). Communication orale et écrite fluide.</p>
+    <span class="badge">Anglais C1/C2</span>
+  </div>
+</div>
+
+<footer>Aswin PIRATHEEPAN · BTS SIO SISR · Paris School Of Technology and Business · 2024–2026</footer>
+</body>
+</html>
