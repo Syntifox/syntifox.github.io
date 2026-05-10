@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Veille — SPF, DKIM, DMARC | Aswin PIRATHEEPAN</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800;900&family=Instrument+Sans:ital,wght@0,400;0,500;0,600;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/page.css" />
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo">
+        <span class="logo-initials">AP</span>
+        <span class="logo-text">Aswin PIRATHEEPAN</span>
+      </a>
+      <button class="nav-toggle" id="navToggle" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html">Accueil</a></li>
+        <li><a href="index.html#parcours">Parcours</a></li>
+        <li><a href="index.html#competences">Compétences</a></li>
+        <li><a href="index.html#alternance">Alternance</a></li>
+        <li><a href="index.html#veille">Veille</a></li>
+        <li><a href="index.html#tableau">Tableau E5</a></li>
+        <li><a href="index.html#contact" class="btn-nav">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- PAGE HERO -->
+  <div class="page-hero">
+    <div class="container page-hero-inner">
+      <a href="index.html#veille" class="back-link">← Retour au portfolio</a>
+      <h1>Sécurisation des emails :<br/>SPF, DKIM &amp; DMARC</h1>
+      <p>Comment protéger son domaine contre l'usurpation d'identité par email en entreprise.</p>
+      <div class="page-meta">
+        <span class="meta-pill">🔒 Cybersécurité</span>
+        <span class="meta-pill">📧 Messagerie</span>
+        <span class="meta-pill">🌐 DNS</span>
+        <span class="meta-pill">📅 Avril 2026</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- PAGE BODY -->
+  <div class="page-body">
+    <div class="container">
+      <div class="page-layout">
+
+        <!-- CONTENU PRINCIPAL -->
+        <div class="page-content">
+
+          <!-- POURQUOI CE SUJET -->
+          <h2>Pourquoi ce sujet ?</h2>
+          <p>L'email reste aujourd'hui le <strong>principal vecteur d'attaque en entreprise</strong>. Selon l'ANSSI, plus de 90% des cyberattaques commencent par un email frauduleux. Or le protocole SMTP, qui gère l'envoi des emails depuis les années 80, ne vérifie pas l'identité de l'expéditeur.</p>
+          <p>N'importe qui peut envoyer un email en se faisant passer pour une autre personne ou une autre entreprise — c'est ce qu'on appelle le <strong>spoofing</strong>. En tant que futur administrateur systèmes et réseaux, la configuration des mécanismes de protection contre cette menace fait directement partie de mes missions.</p>
+
+          <div class="callout">
+            <strong>Lien avec le référentiel BTS SIO SISR :</strong> La sécurisation des services de messagerie est une compétence du bloc B2 — Exploiter des services réseau, et du bloc B2.3 — Assurer la sécurité d'une infrastructure.
+          </div>
+
+          <!-- LE PROBLÈME -->
+          <h2>Le problème : le spoofing par email</h2>
+          <p>Par défaut, quand un serveur reçoit un email, il ne peut pas vérifier que l'expéditeur est bien celui qu'il prétend être. Un pirate peut donc envoyer un email depuis n'importe quel serveur en mettant n'importe quelle adresse dans le champ "De :".</p>
+          <p>Cette technique est utilisée dans les attaques <strong>BEC (Business Email Compromise)</strong> : le pirate se fait passer pour le directeur financier ou un fournisseur et demande un virement urgent. Ces attaques coûtent des milliards d'euros chaque année aux entreprises.</p>
+
+          <div class="callout-warn">
+            <strong>Chiffres clés :</strong> Moins de 50% des entreprises françaises ont DMARC correctement configuré selon l'ANSSI. Le coût moyen d'une attaque BEC réussie dépasse 50 000€ pour une PME.
+          </div>
+
+          <!-- SPF -->
+          <h2>SPF — Sender Policy Framework</h2>
+          <p>Le SPF est un <strong>enregistrement DNS de type TXT</strong> qui liste tous les serveurs autorisés à envoyer des emails au nom du domaine de l'entreprise.</p>
+          <p>Quand un email arrive, le serveur destinataire interroge le DNS de l'expéditeur et vérifie si le serveur qui a envoyé l'email est bien dans la liste autorisée. Si ce n'est pas le cas, l'email est marqué comme suspect.</p>
+
+          <div class="code-block">
+            <span class="comment"># Exemple d'enregistrement SPF pour Microsoft 365</span><br/>
+            <span class="cmd">v=spf1</span> <span class="val">include:spf.protection.outlook.com</span> <span class="cmd">-all</span><br/><br/>
+            <span class="comment"># v=spf1       → version du protocole</span><br/>
+            <span class="comment"># include:...  → serveurs Microsoft autorisés</span><br/>
+            <span class="comment"># -all         → tous les autres serveurs sont rejetés</span>
+          </div>
+
+          <!-- DKIM -->
+          <h2>DKIM — DomainKeys Identified Mail</h2>
+          <p>DKIM ajoute une <strong>signature numérique</strong> à chaque email envoyé. Le serveur expéditeur signe l'email avec une clé privée, et publie la clé publique correspondante dans le DNS.</p>
+          <p>Quand l'email arrive à destination, le serveur destinataire récupère la clé publique dans le DNS et vérifie la signature. Cela garantit deux choses : l'email vient bien du bon serveur, et son contenu n'a pas été modifié en transit.</p>
+
+          <div class="code-block">
+            <span class="comment"># Exemple d'enregistrement DKIM dans le DNS</span><br/>
+            <span class="cmd">selector._domainkey.example.com</span> <span class="val">IN TXT</span><br/>
+            <span class="comment">"v=DKIM1; k=rsa; p=MIGfMA0GCSqGSIb3DQEBA..."</span><br/><br/>
+            <span class="comment"># selector      → identifiant de la clé</span><br/>
+            <span class="comment"># k=rsa         → algorithme de chiffrement</span><br/>
+            <span class="comment"># p=...         → clé publique</span>
+          </div>
+
+          <!-- DMARC -->
+          <h2>DMARC — Domain-based Message Authentication</h2>
+          <p>DMARC s'appuie sur SPF et DKIM et définit la <strong>politique à appliquer</strong> quand un email échoue les vérifications. Il envoie aussi des rapports quotidiens à l'administrateur pour surveiller les tentatives d'usurpation.</p>
+          <p>Il existe trois niveaux de politique DMARC :</p>
+          <ul>
+            <li><strong>none</strong> — surveillance uniquement, aucun email n'est bloqué. Utilisé pendant la phase de test.</li>
+            <li><strong>quarantine</strong> — les emails suspects sont envoyés en dossier spam.</li>
+            <li><strong>reject</strong> — les emails suspects sont rejetés complètement. C'est la configuration recommandée.</li>
+          </ul>
+
+          <div class="code-block">
+            <span class="comment"># Exemple d'enregistrement DMARC</span><br/>
+            <span class="cmd">_dmarc.example.com</span> <span class="val">IN TXT</span><br/>
+            <span class="comment">"v=DMARC1; p=reject; rua=mailto:dmarc@example.com"</span><br/><br/>
+            <span class="comment"># p=reject      → politique : bloquer les emails suspects</span><br/>
+            <span class="comment"># rua=mailto:   → adresse pour recevoir les rapports</span>
+          </div>
+
+          <!-- COMPLÉMENTARITÉ -->
+          <h2>Les 3 protocoles sont complémentaires</h2>
+          <ul>
+            <li><strong>SPF seul</strong> ne suffit pas — il ne vérifie pas si le contenu a été modifié.</li>
+            <li><strong>DKIM seul</strong> ne suffit pas — un email peut être signé mais venir d'un serveur non autorisé.</li>
+            <li><strong>DMARC seul</strong> ne fonctionne pas — il s'appuie sur SPF et DKIM pour prendre ses décisions.</li>
+          </ul>
+          <p>Les trois ensemble forment une chaîne de protection solide contre l'usurpation d'identité par email.</p>
+
+          <!-- MISE EN PLACE -->
+          <h2>Ma démarche de veille et mise en pratique</h2>
+          <p>J'ai conduit cette veille en consultant plusieurs sources complémentaires :</p>
+          <ul>
+            <li>Le guide de l'<strong>ANSSI</strong> sur la sécurisation des systèmes de messagerie électronique</li>
+            <li>La documentation <strong>Microsoft Learn</strong> sur la configuration SPF, DKIM et DMARC dans Microsoft 365</li>
+            <li>L'outil <strong>MXToolbox</strong> pour analyser concrètement les enregistrements DNS de plusieurs domaines</li>
+            <li>Les alertes <strong>CERT-FR</strong> sur les incidents liés à l'usurpation de domaine</li>
+          </ul>
+
+          <p>En pratique, j'ai utilisé MXToolbox pour vérifier la configuration SPF, DKIM et DMARC du domaine de mon école et de plusieurs entreprises connues. Cela m'a permis de comprendre concrètement quels enregistrements étaient présents et lesquels manquaient.</p>
+
+          <div class="callout">
+            <strong>Chez Clean Confiance :</strong> L'entreprise utilise Microsoft 365 avec Exchange Online. DKIM est activé et géré automatiquement par Microsoft via le portail Microsoft 365 Defender. J'ai consulté ces configurations dans le cadre de mes missions d'administration et pu vérifier que les enregistrements SPF et DMARC étaient bien en place sur le domaine de l'entreprise.
+          </div>
+
+          <!-- CONCLUSION -->
+          <h2>Conclusion</h2>
+          <p>La configuration de SPF, DKIM et DMARC est aujourd'hui <strong>indispensable pour tout domaine d'entreprise</strong>. C'est une protection simple à mettre en place mais encore trop souvent négligée. En tant qu'administrateur systèmes et réseaux, c'est une des premières vérifications à faire lors de la prise en charge d'une infrastructure.</p>
+          <p>Cette veille m'a également permis de mieux comprendre le fonctionnement du DNS et son rôle central dans la sécurité des services réseau — compétence directement applicable dans mon alternance et dans l'épreuve E6.</p>
+
+        </div>
+
+        <!-- SIDEBAR -->
+        <aside class="page-sidebar">
+
+          <div class="sidebar-card">
+            <h3>Informations</h3>
+            <div class="comp-list">
+              <div class="comp-list-item">📅 <strong>Date :</strong> Avril 2026</div>
+              <div class="comp-list-item">🏷️ <strong>Thème :</strong> Cybersécurité / Messagerie</div>
+              <div class="comp-list-item">🎯 <strong>Niveau :</strong> Administrateur systèmes</div>
+              <div class="comp-list-item"><span class="status-ok">Veille active</span></div>
+            </div>
+          </div>
+
+          <div class="sidebar-card">
+            <h3>Technologies abordées</h3>
+            <div class="sidebar-tags">
+              <span class="sidebar-tag">SPF</span>
+              <span class="sidebar-tag">DKIM</span>
+              <span class="sidebar-tag">DMARC</span>
+              <span class="sidebar-tag">DNS</span>
+              <span class="sidebar-tag">SMTP</span>
+              <span class="sidebar-tag">Microsoft 365</span>
+              <span class="sidebar-tag">Exchange Online</span>
+              <span class="sidebar-tag">MXToolbox</span>
+            </div>
+          </div>
+
+          <div class="sidebar-card">
+            <h3>Compétences BTS SIO</h3>
+            <div class="comp-list">
+              <div class="comp-list-item"><span class="comp-badge">B2.2</span>Exploiter des services réseau</div>
+              <div class="comp-list-item"><span class="comp-badge">B2.3</span>Assurer la sécurité</div>
+              <div class="comp-list-item"><span class="comp-badge">B3.1</span>Faire évoluer le SI</div>
+            </div>
+          </div>
+
+          <div class="sidebar-card">
+            <h3>Sources consultées</h3>
+            <div class="sidebar-links">
+              <div class="comp-list-item">🔗 ANSSI — guide messagerie</div>
+              <div class="comp-list-item">🔗 Microsoft Learn — M365</div>
+              <div class="comp-list-item">🔗 MXToolbox — vérification DNS</div>
+              <div class="comp-list-item">🔗 CERT-FR — alertes sécurité</div>
+            </div>
+          </div>
+
+          <div class="sidebar-card">
+            <h3>Chiffres clés</h3>
+            <div class="comp-list">
+              <div class="comp-list-item">📊 90% des attaques commencent par un email</div>
+              <div class="comp-list-item">📊 moins de 50% des entreprises ont DMARC configuré</div>
+              <div class="comp-list-item">📊 50 000€ coût moyen d'une attaque BEC</div>
+            </div>
+          </div>
+
+        </aside>
+      </div>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div class="footer-left">
+        <a href="index.html" class="nav-logo">
+          <span class="logo-initials">AP</span>
+          <span class="logo-text">Aswin PIRATHEEPAN</span>
+        </a>
+        <p>BTS SIO SISR · Paris School Of Technology and Business</p>
+      </div>
+      <div class="footer-links">
+        <a href="index.html#accueil">Accueil</a>
+        <a href="index.html#competences">Compétences</a>
+        <a href="index.html#alternance">Alternance</a>
+        <a href="index.html#veille">Veille</a>
+        <a href="index.html#tableau">Tableau E5</a>
+        <a href="index.html#contact">Contact</a>
+      </div>
+      <div class="footer-right">
+        <p>© 2026 Aswin PIRATHEEPAN</p>
+        <p>Hébergé sur <a href="https://pages.github.com" target="_blank">GitHub Pages</a></p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
