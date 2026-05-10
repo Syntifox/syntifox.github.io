@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Veille — SPF, DKIM, DMARC | Aswin PIRATHEEPAN</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800;900&family=Instrument+Sans:ital,wght@0,400;0,500;0,600;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/subpage.css" />
+
+<style>
+.page-content h2{
+    margin-top:40px;
+    margin-bottom:14px;
+}
+.page-content p,
+.page-content li{
+    line-height:1.9;
+}
+.page-content ul{
+    margin:18px 0;
+    padding-left:22px;
+}
+.callout{
+    background:#111827;
+    border-left:4px solid #3b82f6;
+    padding:18px;
+    border-radius:12px;
+    margin:24px 0;
+}
+.page-content a{
+    text-decoration:underline;
+}
+</style>
+
+</head>
+<body>
+
+  <nav class="navbar" id="navbar">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo">
+        <span class="logo-initials">AP</span>
+        <span class="logo-text">Aswin PIRATHEEPAN</span>
+      </a>
+      <button class="nav-toggle" id="navToggle" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html">Accueil</a></li>
+        <li><a href="index.html#parcours">Parcours</a></li>
+        <li><a href="index.html#alternance">Alternance</a></li>
+        <li><a href="index.html#veille">Veille</a></li>
+        <li><a href="index.html#tableau">Tableau synthèse</a></li>
+        <li><a href="index.html#contact" class="btn-nav">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="page-hero">
+    <div class="container page-hero-inner">
+      <a href="index.html#veille" class="back-link">← Retour au portfolio</a>
+      <h1>Sécurisation des emails :<br/>SPF, DKIM &amp; DMARC</h1>
+      <p>Comment protéger son domaine contre l'usurpation d'identité par email — et comment j'ai conduit cette veille au quotidien.</p>
+      <div class="page-meta">
+        <span class="meta-pill">🔒 Cybersécurité</span>
+        <span class="meta-pill">📧 Messagerie</span>
+        <span class="meta-pill">🌐 DNS</span>
+        <span class="meta-pill">📅 Avril 2026</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="page-body">
+    <div class="container">
+      <div class="page-layout">
+
+        <div class="page-content">
+
+          <!-- COMMENT J'AI CONDUIT CETTE VEILLE -->
+          <h2>Comment j'ai conduit cette veille</h2>
+          <p>Pour rester informé des évolutions en cybersécurité et messagerie, j'ai mis en place une <strong>veille technologique automatisée</strong> à travers plusieurs outils complémentaires. Voici exactement comment j'ai procédé pour ce sujet.</p>
+
+          <h2>1. Google Alertes — la base de la veille automatique</h2>
+          <p><strong>Google Alertes</strong> (<a href="https://alerts.google.com" target="_blank">alerts.google.com</a>) est l'outil le plus simple pour automatiser une veille. Il envoie un email dès qu'un nouvel article correspondant à mes mots-clés est publié sur le web.</p>
+          <p>Pour ce sujet, j'ai configuré les alertes suivantes :</p>
+          <ul>
+            <li><strong>"SPF DKIM DMARC"</strong> — pour suivre les nouveautés sur ces protocoles</li>
+            <li><strong>"sécurité messagerie entreprise"</strong> — pour les actualités en français</li>
+            <li><strong>"email spoofing 2026"</strong> — pour les nouvelles attaques</li>
+            <li><strong>"ANSSI messagerie"</strong> — pour les recommandations officielles françaises</li>
+          </ul>
+          <p>Chaque matin je reçois un résumé des nouveaux articles. C'est ce qui m'a permis de trouver les articles sur l'obligation de DMARC imposée par Google et Microsoft en 2024, et les nouvelles réglementations 2026.</p>
+
+          <div class="callout">
+            <strong>À dire au jury :</strong> "J'ai configuré des Google Alertes sur des mots-clés précis. Chaque jour je reçois automatiquement les nouveaux articles publiés sur ces sujets. C'est comme ça que j'ai vu que Google et Microsoft ont rendu SPF/DKIM/DMARC obligatoires en 2024 pour tous les expéditeurs massifs."
+          </div>
+
+          <h2>2. Feedly — agrégateur RSS pour suivre les sites spécialisés</h2>
+          <p><strong>Feedly</strong> (feedly.com) est un agrégateur de flux RSS. Concrètement, je m'abonne aux flux RSS des sites spécialisés que je veux suivre, et Feedly les regroupe tous dans une seule interface — comme un journal personnalisé.</p>
+          <p>Les sources que j'ai ajoutées dans Feedly pour ce sujet :</p>
+          <ul>
+            <li><strong><a href="https://cert.ssi.gouv.fr" target="_blank">cert.ssi.gouv.fr</a></strong> — le CERT-FR publie les alertes de sécurité officielles françaises</li>
+            <li><strong>powerdmarc.com/blog</strong> — blog spécialisé SPF/DKIM/DMARC mis à jour chaque semaine</li>
+            <li><strong>www.ssi.gouv.fr</strong> — guides et recommandations de l'ANSSI</li>
+            <li><strong>scworld.com</strong> — actualité cybersécurité internationale</li>
+          </ul>
+          <p>Feedly me permet de tout lire au même endroit sans aller sur chaque site manuellement. Je passe environ 10 minutes le matin à parcourir les titres et je lis les articles qui m'intéressent.</p>
+
+          <div class="callout">
+            <strong>À dire au jury :</strong> "J'utilise Feedly pour agréger les flux RSS des sites spécialisés. Au lieu d'aller sur 5 sites différents chaque jour, tout arrive dans une seule application. Je l'utilise notamment pour suivre le CERT-FR et l'ANSSI."
+          </div>
+
+          <h2>3. Reddit — communautés professionnelles</h2>
+          <p>Reddit héberge des communautés de professionnels IT qui partagent des articles, des retours d'expérience et des questions techniques. J'ai suivi deux sous-reddit pertinents :</p>
+          <ul>
+            <li><strong>r/netsec</strong> — sécurité réseau, vulnérabilités, bonnes pratiques. C'est ici que j'ai vu des discussions sur les nouvelles attaques qui contournent DMARC.</li>
+            <li><strong>r/sysadmin</strong> — administrateurs systèmes. Des retours concrets sur la mise en place de SPF/DKIM/DMARC en entreprise réelle.</li>
+          </ul>
+          <p>L'avantage de Reddit c'est le retour terrain : des admins qui expliquent les problèmes qu'ils ont rencontrés en configurant DMARC, les erreurs courantes, les outils qu'ils utilisent.</p>
+
+          <div class="callout">
+            <strong>À dire au jury :</strong> "Sur Reddit r/sysadmin j'ai trouvé des retours d'expérience d'administrateurs qui ont mis en place DMARC en entreprise. C'est complémentaire aux articles techniques — on voit les problèmes concrets rencontrés sur le terrain."
+          </div>
+
+          <h2>4. Newsletters CERT-FR et ANSSI</h2>
+          <p>Je me suis abonné aux newsletters officielles françaises de cybersécurité :</p>
+          <ul>
+            <li><strong>CERT-FR</strong> (<a href="https://cert.ssi.gouv.fr" target="_blank">cert.ssi.gouv.fr</a>) — envoie des bulletins hebdomadaires sur les vulnérabilités et incidents de sécurité. J'y ai vu des alertes sur des campagnes de phishing qui exploitaient des domaines sans DMARC.</li>
+            <li><strong>ANSSI</strong> (ssi.gouv.fr) — publie des guides de bonnes pratiques. Le guide "Sécuriser les échanges de courrier électronique" m'a été très utile pour comprendre la configuration recommandée.</li>
+          </ul>
+          <p>Ce sont des sources officielles et fiables, ce qui est important pour citer des informations vérifiées à l'oral.</p>
+
+          <div class="callout">
+            <strong>À dire au jury :</strong> "Je suis abonné aux bulletins du CERT-FR et de l'ANSSI. Ce sont des sources officielles françaises — quand je cite des chiffres ou des recommandations, je sais qu'ils sont fiables et à jour."
+          </div>
+
+          <h2>5. Twitter/X — comptes spécialisés</h2>
+          <p>Certains experts en cybersécurité partagent des informations en temps réel sur Twitter/X avant même que les articles soient publiés. Les comptes que je suis :</p>
+          <ul>
+            <li><strong>@anssi_fr</strong> — compte officiel de l'ANSSI</li>
+            <li><strong>@CERTFrance</strong> — alertes de sécurité en temps réel</li>
+            <li><strong>@MXToolbox</strong> — actualités sur la délivrabilité et l'authentification email</li>
+          </ul>
+
+          <div class="callout">
+            <strong>À dire au jury :</strong> "Twitter me permet de voir les actualités en temps réel. L'ANSSI et le CERT-FR ont des comptes officiels très actifs. C'est souvent là que je vois les premières alertes avant même les articles."
+          </div>
+
+          <!-- POURQUOI CE SUJET -->
+          <h2>Pourquoi ce sujet ?</h2>
+          <p>L'email reste le <strong>principal vecteur d'attaque en entreprise</strong>. Selon l'ANSSI, plus de 90% des cyberattaques commencent par un email frauduleux. Or le protocole SMTP, qui date des années 80, ne vérifie pas l'identité de l'expéditeur par défaut.</p>
+          <p>N'importe qui peut envoyer un email en se faisant passer pour quelqu'un d'autre — c'est le <strong>spoofing</strong>. En tant que futur administrateur SISR, configurer les protections contre cette menace fait directement partie de mes missions.</p>
+
+          <div class="callout-warn">
+            <strong>Chiffres clés 2026 :</strong> 46% de tous les emails échouent la validation DMARC selon Cloudflare. Moins de 52% des domaines mondiaux ont DMARC configuré. Le coût moyen d'une attaque BEC pour une PME dépasse 50 000€.
+          </div>
+
+          <!-- LE PROBLÈME -->
+          <h2>Le problème : le spoofing par email</h2>
+          <p>Par défaut, quand un serveur reçoit un email, il ne peut pas vérifier que l'expéditeur est bien celui qu'il prétend être. Un pirate peut donc envoyer un email en se faisant passer pour le directeur financier d'une entreprise et demander un virement urgent. C'est l'attaque <strong>BEC (Business Email Compromise)</strong>.</p>
+          <p>SPF, DKIM et DMARC ont été créés pour résoudre ce problème en ajoutant des mécanismes de vérification de l'identité de l'expéditeur dans le DNS.</p>
+
+          <!-- SPF -->
+          <h2>SPF — Sender Policy Framework</h2>
+          <p>Le SPF est un <strong>enregistrement DNS de type TXT</strong> qui liste tous les serveurs autorisés à envoyer des emails au nom du domaine. Quand un email arrive, le serveur destinataire interroge le DNS et vérifie si le serveur expéditeur est dans la liste autorisée.</p>
+
+          <div class="code-block">
+            <span class="comment"># Exemple d'enregistrement SPF pour Microsoft 365</span><br/>
+            <span class="cmd">v=spf1</span> <span class="val">include:spf.protection.outlook.com</span> <span class="cmd">-all</span><br/><br/>
+            <span class="comment"># v=spf1       → version du protocole</span><br/>
+            <span class="comment"># include:...  → serveurs Microsoft autorisés</span><br/>
+            <span class="comment"># -all         → tous les autres serveurs sont rejetés</span>
+          </div>
+
+          <!-- DKIM -->
+          <h2>DKIM — DomainKeys Identified Mail</h2>
+          <p>DKIM ajoute une <strong>signature numérique cryptographique</strong> à chaque email envoyé. Le serveur signe l'email avec une clé privée et publie la clé publique dans le DNS. Le destinataire vérifie la signature pour s'assurer que l'email n'a pas été modifié et vient bien du bon serveur.</p>
+
+          <div class="code-block">
+            <span class="comment"># Exemple d'enregistrement DKIM dans le DNS</span><br/>
+            <span class="cmd">selector._domainkey.example.com</span> <span class="val">IN TXT</span><br/>
+            <span class="comment">"v=DKIM1; k=rsa; p=MIGfMA0GCSqGSIb3DQEBA..."</span><br/><br/>
+            <span class="comment"># selector  → identifiant de la clé</span><br/>
+            <span class="comment"># k=rsa     → algorithme de chiffrement RSA</span><br/>
+            <span class="comment"># p=...     → clé publique</span>
+          </div>
+
+          <!-- DMARC -->
+          <h2>DMARC — Domain-based Message Authentication</h2>
+          <p>DMARC s'appuie sur SPF et DKIM et définit la <strong>politique à appliquer</strong> quand un email échoue les deux vérifications. Il envoie aussi des rapports quotidiens à l'administrateur.</p>
+          <ul>
+            <li><strong>p=none</strong> — surveillance uniquement, aucun email bloqué. Phase de test.</li>
+            <li><strong>p=quarantine</strong> — emails suspects envoyés en spam.</li>
+            <li><strong>p=reject</strong> — emails suspects rejetés complètement. Configuration recommandée.</li>
+          </ul>
+
+          <div class="code-block">
+            <span class="comment"># Exemple d'enregistrement DMARC</span><br/>
+            <span class="cmd">_dmarc.example.com</span> <span class="val">IN TXT</span><br/>
+            <span class="comment">"v=DMARC1; p=reject; rua=mailto:dmarc@example.com"</span><br/><br/>
+            <span class="comment"># p=reject      → bloquer les emails suspects</span><br/>
+            <span class="comment"># rua=mailto:   → adresse pour les rapports quotidiens</span>
+          </div>
+
+          <!-- MISE EN PRATIQUE -->
+          <h2>Ce que j'ai vérifié concrètement</h2>
+          <p>Pour mettre en pratique cette veille, j'ai utilisé <strong>MXToolbox</strong> (mxtoolbox.com) pour analyser les enregistrements DNS de plusieurs domaines et vérifier leur configuration SPF, DKIM et DMARC.</p>
+          <p>J'ai notamment vérifié la configuration du domaine de mon école et pu constater quels enregistrements étaient présents et lesquels manquaient. Chez <strong>Clean Confiance</strong>, l'entreprise utilise Microsoft 365 — DKIM est activé et géré via le portail Microsoft 365 Defender. J'ai consulté ces configurations dans le cadre de mes missions d'administration.</p>
+
+          <div class="callout">
+            <strong>Commandes DNS pour vérifier manuellement :</strong><br/>
+            dig TXT votredomaine.fr | grep spf &nbsp;→ vérifie SPF<br/>
+            dig TXT _dmarc.votredomaine.fr &nbsp;→ vérifie DMARC
+          </div>
+
+          <!-- CONCLUSION -->
+          <h2>Conclusion</h2>
+          <p>SPF, DKIM et DMARC forment une chaîne de protection complémentaire — aucun ne suffit seul. En 2026, leur configuration est devenue une <strong>obligation réglementaire</strong> : Google et Microsoft rejettent les emails des domaines non conformes. C'est une des premières vérifications à faire lors de la prise en charge d'une infrastructure en tant qu'administrateur SISR.</p>
+          <p>Cette veille m'a aussi permis de structurer une méthodologie de suivi automatisé que je peux appliquer à n'importe quel sujet IT : Google Alertes pour l'automatisation, Feedly pour les flux RSS, CERT-FR et ANSSI pour les sources officielles.</p>
+
+        </div>
+
+        <!-- SIDEBAR -->
+        <aside class="page-sidebar">
+
+          <div class="sidebar-card">
+            <h3>Outils de veille utilisés</h3>
+            <div class="comp-list">
+              <div class="comp-list-item">📰 <strong>Feedly</strong> — flux RSS agrégés</div>
+              <div class="comp-list-item">🔔 <strong>Google Alertes</strong> — mots-clés automatiques</div>
+              <div class="comp-list-item">💬 <strong>Reddit</strong> r/netsec &amp; r/sysadmin</div>
+              <div class="comp-list-item">📧 <strong>CERT-FR / ANSSI</strong> — newsletters officielles</div>
+              <div class="comp-list-item">🐦 <strong>Twitter/X</strong> — @anssi_fr @CERTFrance</div>
+            </div>
+          </div>
+
+          <div class="sidebar-card">
+            <h3>Informations</h3>
+            <div class="comp-list">
+              <div class="comp-list-item">📅 <strong>Date :</strong> Avril 2026</div>
+              <div class="comp-list-item">🏷️ <strong>Thème :</strong> Cybersécurité / Messagerie</div>
+              <div class="comp-list-item">🎯 <strong>Niveau :</strong> Administrateur systèmes</div>
+              <div class="comp-list-item"><span class="status-ok">Veille active</span></div>
+            </div>
+          </div>
+
+          <div class="sidebar-card">
+            <h3>Technologies abordées</h3>
+            <div class="sidebar-tags">
+              <span class="sidebar-tag">SPF</span>
+              <span class="sidebar-tag">DKIM</span>
+              <span class="sidebar-tag">DMARC</span>
+              <span class="sidebar-tag">DNS</span>
+              <span class="sidebar-tag">SMTP</span>
+              <span class="sidebar-tag">Microsoft 365</span>
+              <span class="sidebar-tag">Exchange Online</span>
+              <span class="sidebar-tag">MXToolbox</span>
+            </div>
+          </div>
+
+          <div class="sidebar-card">
+            <h3>Compétences BTS SIO</h3>
+            <div class="comp-list">
+              <div class="comp-list-item"><span class="comp-badge">B2.2</span>Exploiter des services réseau</div>
+              <div class="comp-list-item"><span class="comp-badge">B2.3</span>Assurer la sécurité</div>
+              <div class="comp-list-item"><span class="comp-badge">B3.1</span>Faire évoluer le SI</div>
+            </div>
+          </div>
+
+          <div class="sidebar-card">
+            <h3>Chiffres clés 2026</h3>
+            <div class="comp-list">
+              <div class="comp-list-item">📊 90% des attaques commencent par un email</div>
+              <div class="comp-list-item">📊 46% des emails échouent DMARC (Cloudflare 2026)</div>
+              <div class="comp-list-item">📊 52% des domaines ont DMARC configuré</div>
+              <div class="comp-list-item">📊 50 000€ coût moyen d'une attaque BEC</div>
+            </div>
+          </div>
+
+          <div class="sidebar-card">
+            <h3>Sources consultées</h3>
+            <div class="comp-list">
+              <div class="comp-list-item">🔗 <a href="https://cert.ssi.gouv.fr" target="_blank">cert.ssi.gouv.fr</a></div>
+              <div class="comp-list-item">🔗 ssi.gouv.fr (ANSSI)</div>
+              <div class="comp-list-item">🔗 mxtoolbox.com</div>
+              <div class="comp-list-item">🔗 powerdmarc.com</div>
+              <div class="comp-list-item">🔗 dhala.fr/blog/spf-dkim-dmarc-pme</div>
+              <div class="comp-list-item">🔗 Microsoft Learn — M365</div>
+            </div>
+          </div>
+
+        </aside>
+      </div>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div class="footer-left">
+        <a href="index.html" class="nav-logo">
+          <span class="logo-initials">AP</span>
+          <span class="logo-text">Aswin PIRATHEEPAN</span>
+        </a>
+        <p>BTS SIO SISR · Paris School Of Technology and Business</p>
+      </div>
+      <div class="footer-links">
+        <a href="index.html#accueil">Accueil</a>
+        <a href="index.html#alternance">Alternance</a>
+        <a href="index.html#veille">Veille</a>
+        <a href="index.html#tableau">Tableau synthèse</a>
+        <a href="index.html#contact">Contact</a>
+      </div>
+      <div class="footer-right">
+        <p>© 2026 Aswin PIRATHEEPAN</p>
+        <p>Hébergé sur <a href="https://pages.github.com" target="_blank">GitHub Pages</a></p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
