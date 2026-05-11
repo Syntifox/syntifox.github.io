@@ -1,113 +1,405 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Épreuve E6 — Aswin PIRATHEEPAN</title>
-<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Sora:wght@300;400;600;700&display=swap" rel="stylesheet">
-
-<style>
-:root{--bg:#0d0f14;--surface:#13161e;--border:#1e2330;--accent:#3b82f6;--green:#22c55e;--yellow:#f59e0b;--text:#e2e8f0;--muted:#64748b;--mono:'JetBrains Mono',monospace;--sans:'Sora',sans-serif}
-*{box-sizing:border-box;margin:0;padding:0}
-body{background:var(--bg);color:var(--text);font-family:var(--sans);min-height:100vh}
-a{color:var(--accent);text-decoration:none}
-nav{display:flex;align-items:center;justify-content:space-between;padding:1rem 2rem;border-bottom:1px solid var(--border);background:var(--surface);position:sticky;top:0;z-index:100}
-.nav-logo{font-weight:700;font-size:1rem;color:var(--text)}
-.nav-links{display:flex;gap:1.5rem}
-.nav-links a{font-size:13px;color:var(--muted);transition:color .2s}
-.nav-links a:hover,.nav-links a.active{color:var(--text)}
-.container{max-width:900px;margin:0 auto;padding:3rem 1.5rem}
-.section-tag{font-size:11px;font-family:var(--mono);color:var(--accent);letter-spacing:.15em;text-transform:uppercase;margin-bottom:.5rem}
-h1{font-size:2.2rem;font-weight:700;line-height:1.2;margin-bottom:.75rem}
-h2{font-size:1.3rem;font-weight:700;margin-bottom:1rem}
-p{color:var(--muted);line-height:1.7;font-size:.95rem;margin-bottom:.8rem}
-p strong{color:var(--text)}
-.card{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:1.5rem;margin-bottom:1rem}
-.card h3{font-size:1rem;font-weight:700;margin-bottom:.5rem}
-.grid-2{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
-@media(max-width:600px){.grid-2{grid-template-columns:1fr}}
-.badge{display:inline-flex;padding:3px 10px;border-radius:20px;font-size:11px;font-weight:600;font-family:var(--mono);background:rgba(59,130,246,.15);color:var(--accent);border:1px solid rgba(59,130,246,.3);margin:2px}
-.tag-green{background:rgba(34,197,94,.15);color:var(--green);border-color:rgba(34,197,94,.3)}
-.tag-yellow{background:rgba(245,158,11,.15);color:var(--yellow);border-color:rgba(245,158,11,.3)}
-.tag-purple{background:rgba(139,92,246,.15);color:#8b5cf6;border-color:rgba(139,92,246,.3)}
-footer{text-align:center;padding:2rem;font-family:var(--mono);font-size:11px;color:var(--muted);border-top:1px solid var(--border);margin-top:4rem}
-.hr{height:1px;background:var(--border);margin:2rem 0}
-.skill-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:12px;margin-top:1.5rem}
-.skill-card{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:1.2rem}
-.skill-icon{font-size:1.5rem;margin-bottom:.5rem}
-.skill-title{font-size:.9rem;font-weight:700;margin-bottom:.5rem}
-.skill-items{font-size:.8rem;color:var(--muted);line-height:1.6}
-.timeline{display:flex;flex-direction:column;gap:1.2rem}
-.tl-item{display:flex;gap:1rem}
-.tl-dot{width:10px;height:10px;border-radius:50%;background:var(--accent);flex-shrink:0;margin-top:6px}
-.tl-date{font-family:var(--mono);font-size:11px;color:var(--accent);margin-bottom:2px}
-.tl-title{font-size:.95rem;font-weight:700}
-.tl-sub{font-size:.85rem;color:var(--muted)}
-.veille-card{background:var(--surface);border:1px solid var(--border);border-radius:14px;overflow:hidden;margin-bottom:1rem}
-.veille-header{background:linear-gradient(135deg,rgba(59,130,246,.2),rgba(6,182,212,.1));padding:1.5rem;border-bottom:1px solid var(--border)}
-.veille-body{padding:1.5rem}
-.contact-links{display:flex;gap:1rem;flex-wrap:wrap;margin-top:1rem}
-.contact-btn{display:inline-flex;align-items:center;gap:8px;padding:10px 20px;border-radius:10px;font-size:13px;font-weight:600;border:1px solid var(--border);background:var(--surface);color:var(--text);transition:border-color .2s}
-.contact-btn:hover{border-color:var(--accent)}
-.stat-row{display:flex;gap:1rem;flex-wrap:wrap;margin:1.5rem 0}
-.stat{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:1rem 1.5rem;text-align:center}
-.stat-n{font-size:1.8rem;font-weight:700;color:var(--accent)}
-.stat-l{font-size:12px;color:var(--muted);margin-top:2px}
-.proj-grid{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
-@media(max-width:600px){.proj-grid{grid-template-columns:1fr}}
-.proj-num{font-family:var(--mono);font-size:10px;color:var(--accent);margin-bottom:4px}
-.proj-title{font-size:.95rem;font-weight:700;margin-bottom:.4rem}
-.proj-desc{font-size:.82rem;color:var(--muted);line-height:1.5;margin-bottom:.8rem}
-</style>
-
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Épreuve E6 — Aswin PIRATHEEPAN</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800;900&family=Instrument+Sans:ital,wght@0,400;0,500;0,600;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/page.css" />
+  <style>
+    .e6-missions {
+      display: flex;
+      flex-direction: column;
+      gap: 48px;
+      margin-top: 48px;
+    }
+    .e6-mission {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--r);
+      overflow: hidden;
+    }
+    .e6-mission-header {
+      padding: 28px 32px;
+      border-bottom: 1px solid var(--border);
+      background: linear-gradient(135deg, var(--bg-3) 0%, var(--surface-2) 100%);
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+    .e6-mission-num {
+      font-family: var(--font-m);
+      font-size: .68rem;
+      color: var(--cyan);
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      margin-bottom: 6px;
+    }
+    .e6-mission-title {
+      font-family: var(--font-d);
+      font-size: 1.4rem;
+      font-weight: 800;
+      color: var(--text);
+      letter-spacing: -.02em;
+    }
+    .e6-mission-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-top: 12px;
+    }
+    .e6-mission-tag {
+      font-family: var(--font-m);
+      font-size: .68rem;
+      padding: 4px 10px;
+      background: var(--cyan-dim);
+      color: var(--cyan);
+      border: 1px solid rgba(0,212,255,.2);
+      border-radius: 4px;
+    }
+    .e6-mission-body {
+      padding: 32px;
+    }
+    .e6-mission-body p {
+      color: var(--text-2);
+      font-size: .92rem;
+      line-height: 1.8;
+      margin-bottom: 20px;
+    }
+    .e6-mission-body p strong { color: var(--text); }
+    .e6-steps {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin-bottom: 28px;
+    }
+    .e6-step {
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+      padding: 14px 16px;
+      background: var(--bg-3);
+      border: 1px solid var(--border);
+      border-radius: var(--rs);
+    }
+    .e6-step-num {
+      width: 26px;
+      height: 26px;
+      border-radius: 50%;
+      background: var(--cyan-dim);
+      border: 1px solid rgba(0,212,255,.3);
+      color: var(--cyan);
+      font-family: var(--font-m);
+      font-size: .72rem;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      margin-top: 1px;
+    }
+    .e6-step-content strong {
+      display: block;
+      font-size: .88rem;
+      color: var(--text);
+      margin-bottom: 2px;
+    }
+    .e6-step-content span {
+      font-size: .8rem;
+      color: var(--text-3);
+      font-family: var(--font-m);
+    }
+    .e6-pdf-wrapper {
+      border: 1px solid var(--border);
+      border-radius: var(--rs);
+      overflow: hidden;
+    }
+    .e6-pdf-header {
+      padding: 14px 20px;
+      background: var(--bg-3);
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+    .e6-pdf-label {
+      font-family: var(--font-m);
+      font-size: .72rem;
+      color: var(--text-3);
+    }
+    .e6-pdf-embed {
+      width: 100%;
+      height: 600px;
+      border: none;
+      display: block;
+      background: #1a1a1a;
+    }
+    .e6-pdf-caption {
+      text-align: center;
+      font-family: var(--font-m);
+      font-size: .68rem;
+      color: var(--text-3);
+      padding: 12px;
+      border-top: 1px solid var(--border);
+    }
+    .e6-info-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+      gap: 14px;
+      margin-bottom: 40px;
+    }
+    .e6-info-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--rs);
+      padding: 18px;
+    }
+    .e6-info-label {
+      font-family: var(--font-m);
+      font-size: .65rem;
+      color: var(--text-3);
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      margin-bottom: 6px;
+    }
+    .e6-info-value {
+      font-size: .92rem;
+      font-weight: 600;
+      color: var(--text);
+    }
+    @media (max-width: 720px) {
+      .e6-pdf-embed { height: 400px; }
+      .e6-mission-header { padding: 20px; }
+      .e6-mission-body { padding: 20px; }
+    }
+  </style>
 </head>
 <body>
-<nav>
-  <span class="nav-logo">Aswin PIRATHEEPAN</span>
-  <div class="nav-links">
-    <a href="index.html">Accueil</a>
-    <a href="presentation.html">Présentation</a>
-    <a href="cv.html">CV</a>
-    <a href="projets.html">Projets</a>
-    <a href="e5.html">E5</a>
-    <a href="e6.html" class="active">E6</a>
-    <a href="veilles.html">Veilles</a>
-  </div>
-</nav>
 
-<div class="container">
-  <div class="section-tag">Épreuve E6</div>
-  <h1>Administration des systèmes et des réseaux</h1>
-  <p>L'épreuve E6 est l'épreuve pratique de l'option SISR. Elle évalue ma capacité à administrer une infrastructure réseau réelle dans un temps limité.</p>
+  <nav class="navbar" id="navbar">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo">
+        <span class="logo-initials">AP</span>
+        <span class="logo-text">Aswin PIRATHEEPAN</span>
+      </a>
+      <button class="nav-toggle" id="navToggle" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html">Accueil</a></li>
+        <li><a href="index.html#parcours">Parcours</a></li>
+        <li><a href="index.html#alternance">Alternance</a></li>
+        <li><a href="index.html#veille">Veille</a></li>
+        <li><a href="projets.html">Projets</a></li>
+        <li><a href="e5.html">E5</a></li>
+        <li><a href="e6.html" class="active-nav">E6</a></li>
+        <li><a href="index.html#contact" class="btn-nav">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
 
-  <div class="card" style="border-color:rgba(59,130,246,.3)">
-    <div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem">
-      <div><div style="font-size:10px;color:var(--muted);font-family:var(--mono);margin-bottom:4px">DATE</div><div style="font-weight:700">Lundi 29 juin 2026 à 8h00</div></div>
-      <div><div style="font-size:10px;color:var(--muted);font-family:var(--mono);margin-bottom:4px">LIEU</div><div style="font-weight:700">Paris School of Technology and Business</div></div>
-      <div><div style="font-size:10px;color:var(--muted);font-family:var(--mono);margin-bottom:4px">DURÉE</div><div style="font-weight:700">0h40</div></div>
-      <div><div style="font-size:10px;color:var(--muted);font-family:var(--mono);margin-bottom:4px">FORMAT</div><div style="font-weight:700">Épreuve pratique</div></div>
+  <!-- HERO -->
+  <div class="page-hero">
+    <div class="container page-hero-inner">
+      <a href="index.html" class="back-link">← Retour au portfolio</a>
+      <h1>Épreuve E6 — BTS SIO</h1>
+      <p>Administration des systèmes et des réseaux — épreuve pratique SISR. Deux missions réalisées en conditions d'examen.</p>
+      <div class="page-meta">
+        <span class="meta-pill">🖥️ Windows Server</span>
+        <span class="meta-pill">🐧 Linux / Debian</span>
+        <span class="meta-pill">📅 Juin 2026</span>
+        <span class="meta-pill">📍 Paris School T&amp;B</span>
+      </div>
     </div>
   </div>
 
-  <div class="hr"></div>
-  <h2>Compétences évaluées</h2>
-  <div class="skill-grid">
-    <div class="skill-card"><div class="skill-icon">🖥️</div><div class="skill-title">Systèmes</div><div class="skill-items">Administration Windows Server<br>Active Directory<br>Gestion des services</div></div>
-    <div class="skill-card"><div class="skill-icon">🌐</div><div class="skill-title">Réseaux</div><div class="skill-items">Configuration réseau<br>Adressage IP<br>DNS · DHCP</div></div>
-    <div class="skill-card"><div class="skill-icon">🔒</div><div class="skill-title">Sécurité</div><div class="skill-items">GPO · Droits NTFS<br>Pare-feu<br>Gestion des accès</div></div>
-    <div class="skill-card"><div class="skill-icon">🛠</div><div class="skill-title">Services</div><div class="skill-items">Virtualisation VMware<br>PowerShell<br>Dépannage réseau</div></div>
+  <!-- CORPS -->
+  <div class="page-body">
+    <div class="container">
+
+      <!-- INFOS -->
+      <div class="e6-info-grid">
+        <div class="e6-info-card">
+          <div class="e6-info-label">Épreuve</div>
+          <div class="e6-info-value">BTS SIO — E6</div>
+        </div>
+        <div class="e6-info-card">
+          <div class="e6-info-label">Type</div>
+          <div class="e6-info-value">Pratique</div>
+        </div>
+        <div class="e6-info-card">
+          <div class="e6-info-label">Date</div>
+          <div class="e6-info-value">29 juin 2026</div>
+        </div>
+        <div class="e6-info-card">
+          <div class="e6-info-label">Durée</div>
+          <div class="e6-info-value">0h40</div>
+        </div>
+        <div class="e6-info-card">
+          <div class="e6-info-label">Lieu</div>
+          <div class="e6-info-value">Paris School T&amp;B</div>
+        </div>
+        <div class="e6-info-card">
+          <div class="e6-info-label">Missions</div>
+          <div class="e6-info-value">2 sujets</div>
+        </div>
+      </div>
+
+      <!-- MISSIONS -->
+      <div class="e6-missions">
+
+        <!-- MISSION 1 -->
+        <div class="e6-mission reveal">
+          <div class="e6-mission-header">
+            <div>
+              <div class="e6-mission-num">Mission E6 · N°01</div>
+              <div class="e6-mission-title">Déploiement Active Directory &amp; GPO</div>
+              <div class="e6-mission-tags">
+                <span class="e6-mission-tag">Windows Server</span>
+                <span class="e6-mission-tag">AD DS</span>
+                <span class="e6-mission-tag">GPO</span>
+                <span class="e6-mission-tag">DNS</span>
+              </div>
+            </div>
+            <a href="assets/e6-mission1.pdf" class="btn btn-outline btn-sm" download>↓ Télécharger</a>
+          </div>
+          <div class="e6-mission-body">
+            <p>Cette mission consiste à déployer un environnement Windows Server complet avec <strong>Active Directory Domain Services</strong>, configurer le service DNS intégré, créer une structure d'unités d'organisation, gérer les utilisateurs et les groupes, puis appliquer des <strong>stratégies de groupe (GPO)</strong> pour sécuriser et uniformiser les postes clients.</p>
+            <div class="e6-steps">
+              <div class="e6-step">
+                <div class="e6-step-num">1</div>
+                <div class="e6-step-content">
+                  <strong>Installation Windows Server et promotion en contrôleur de domaine</strong>
+                  <span>Rôle AD DS · DNS intégré · Nom de domaine</span>
+                </div>
+              </div>
+              <div class="e6-step">
+                <div class="e6-step-num">2</div>
+                <div class="e6-step-content">
+                  <strong>Création de la structure Active Directory</strong>
+                  <span>Unités d'organisation · Groupes de sécurité · Comptes utilisateurs</span>
+                </div>
+              </div>
+              <div class="e6-step">
+                <div class="e6-step-num">3</div>
+                <div class="e6-step-content">
+                  <strong>Configuration et déploiement des GPO</strong>
+                  <span>Politique mot de passe · Mappage lecteurs · Restrictions utilisateurs</span>
+                </div>
+              </div>
+              <div class="e6-step">
+                <div class="e6-step-num">4</div>
+                <div class="e6-step-content">
+                  <strong>Jonction des postes clients et vérification</strong>
+                  <span>Windows 10 joint au domaine · Connexion utilisateur · GPO appliquées</span>
+                </div>
+              </div>
+            </div>
+            <div class="e6-pdf-wrapper">
+              <div class="e6-pdf-header">
+                <span class="e6-pdf-label">📄 Documentation — Mission E6 N°01</span>
+                <a href="assets/e6-mission1.pdf" class="btn btn-outline btn-sm" download>↓ Télécharger</a>
+              </div>
+              <iframe class="e6-pdf-embed" src="assets/e6-mission1.pdf" title="Mission E6 N°01 — Active Directory & GPO" loading="lazy"></iframe>
+              <div class="e6-pdf-caption">// Cliquez sur le PDF pour l'agrandir</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- MISSION 2 -->
+        <div class="e6-mission reveal">
+          <div class="e6-mission-header">
+            <div>
+              <div class="e6-mission-num">Mission E6 · N°02</div>
+              <div class="e6-mission-title">Installation de GLPI sur Debian 13</div>
+              <div class="e6-mission-tags">
+                <span class="e6-mission-tag">GLPI</span>
+                <span class="e6-mission-tag">Debian 13</span>
+                <span class="e6-mission-tag">LAMP</span>
+                <span class="e6-mission-tag">MariaDB</span>
+              </div>
+            </div>
+            <a href="assets/e6-mission2.pdf" class="btn btn-outline btn-sm" download>↓ Télécharger</a>
+          </div>
+          <div class="e6-mission-body">
+            <p>Cette mission consiste à déployer <strong>GLPI (Gestionnaire Libre de Parc Informatique)</strong> sur un serveur Debian 13. Elle couvre l'installation de la pile LAMP (Linux, Apache, MariaDB, PHP), la configuration du VirtualHost Apache, la création de la base de données et l'installation de l'agent GLPI pour l'<strong>inventaire automatique</strong> du parc informatique.</p>
+            <div class="e6-steps">
+              <div class="e6-step">
+                <div class="e6-step-num">1</div>
+                <div class="e6-step-content">
+                  <strong>Installation Debian 13 et pile LAMP</strong>
+                  <span>Apache2 · MariaDB · PHP 8.4 · Extensions PHP nécessaires</span>
+                </div>
+              </div>
+              <div class="e6-step">
+                <div class="e6-step-num">2</div>
+                <div class="e6-step-content">
+                  <strong>Préparation de la base de données</strong>
+                  <span>Création BDD · Utilisateur SQL · Attribution des droits</span>
+                </div>
+              </div>
+              <div class="e6-step">
+                <div class="e6-step-num">3</div>
+                <div class="e6-step-content">
+                  <strong>Configuration Apache et installation GLPI</strong>
+                  <span>VirtualHost · Modules proxy_fcgi · Installation via interface web</span>
+                </div>
+              </div>
+              <div class="e6-step">
+                <div class="e6-step-num">4</div>
+                <div class="e6-step-content">
+                  <strong>Agent GLPI et inventaire automatique</strong>
+                  <span>Installation agent v1.16 · Machines visibles dans Parc → Ordinateurs</span>
+                </div>
+              </div>
+            </div>
+            <div class="e6-pdf-wrapper">
+              <div class="e6-pdf-header">
+                <span class="e6-pdf-label">📄 Documentation — Mission E6 N°02</span>
+                <a href="assets/e6-mission2.pdf" class="btn btn-outline btn-sm" download>↓ Télécharger</a>
+              </div>
+              <iframe class="e6-pdf-embed" src="assets/e6-mission2.pdf" title="Mission E6 N°02 — GLPI sur Debian 13" loading="lazy"></iframe>
+              <div class="e6-pdf-caption">// Cliquez sur le PDF pour l'agrandir</div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
   </div>
 
-  <div class="hr"></div>
-  <h2>Mes points forts pour l'E6</h2>
-  <div class="card">
-    <p>✅ <strong>Windows Server</strong> — Maîtrisé en formation et en alternance (AD, GPO, NTFS)</p>
-    <p>✅ <strong>Virtualisation</strong> — VMware Workstation utilisé quotidiennement pour tous mes projets</p>
-    <p>✅ <strong>Réseaux</strong> — Adressage IP, DNS, DHCP, pfSense configurés en TP</p>
-    <p>✅ <strong>Dépannage</strong> — Expérience en support N1/N2 en alternance</p>
-  </div>
-</div>
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div class="footer-left">
+        <a href="index.html" class="nav-logo">
+          <span class="logo-initials">AP</span>
+          <span class="logo-text">Aswin PIRATHEEPAN</span>
+        </a>
+        <p>BTS SIO SISR · Paris School Of Technology and Business</p>
+      </div>
+      <div class="footer-links">
+        <a href="index.html">Accueil</a>
+        <a href="index.html#parcours">Parcours</a>
+        <a href="index.html#alternance">Alternance</a>
+        <a href="projets.html">Projets</a>
+        <a href="e5.html">E5</a>
+        <a href="e6.html">E6</a>
+        <a href="index.html#contact">Contact</a>
+      </div>
+      <div class="footer-right">
+        <p>© 2026 Aswin PIRATHEEPAN</p>
+        <p>Hébergé sur <a href="https://pages.github.com" target="_blank">GitHub Pages</a></p>
+      </div>
+    </div>
+  </footer>
 
-<footer>Aswin PIRATHEEPAN · BTS SIO SISR · Paris School Of Technology and Business · 2024–2026</footer>
+  <script src="js/main.js"></script>
 </body>
 </html>
