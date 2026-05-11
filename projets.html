@@ -1,126 +1,249 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Projets — Aswin PIRATHEEPAN</title>
-<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Sora:wght@300;400;600;700&display=swap" rel="stylesheet">
-
-<style>
-:root{--bg:#0d0f14;--surface:#13161e;--border:#1e2330;--accent:#3b82f6;--green:#22c55e;--yellow:#f59e0b;--text:#e2e8f0;--muted:#64748b;--mono:'JetBrains Mono',monospace;--sans:'Sora',sans-serif}
-*{box-sizing:border-box;margin:0;padding:0}
-body{background:var(--bg);color:var(--text);font-family:var(--sans);min-height:100vh}
-a{color:var(--accent);text-decoration:none}
-nav{display:flex;align-items:center;justify-content:space-between;padding:1rem 2rem;border-bottom:1px solid var(--border);background:var(--surface);position:sticky;top:0;z-index:100}
-.nav-logo{font-weight:700;font-size:1rem;color:var(--text)}
-.nav-links{display:flex;gap:1.5rem}
-.nav-links a{font-size:13px;color:var(--muted);transition:color .2s}
-.nav-links a:hover,.nav-links a.active{color:var(--text)}
-.container{max-width:900px;margin:0 auto;padding:3rem 1.5rem}
-.section-tag{font-size:11px;font-family:var(--mono);color:var(--accent);letter-spacing:.15em;text-transform:uppercase;margin-bottom:.5rem}
-h1{font-size:2.2rem;font-weight:700;line-height:1.2;margin-bottom:.75rem}
-h2{font-size:1.3rem;font-weight:700;margin-bottom:1rem}
-p{color:var(--muted);line-height:1.7;font-size:.95rem;margin-bottom:.8rem}
-p strong{color:var(--text)}
-.card{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:1.5rem;margin-bottom:1rem}
-.card h3{font-size:1rem;font-weight:700;margin-bottom:.5rem}
-.grid-2{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
-@media(max-width:600px){.grid-2{grid-template-columns:1fr}}
-.badge{display:inline-flex;padding:3px 10px;border-radius:20px;font-size:11px;font-weight:600;font-family:var(--mono);background:rgba(59,130,246,.15);color:var(--accent);border:1px solid rgba(59,130,246,.3);margin:2px}
-.tag-green{background:rgba(34,197,94,.15);color:var(--green);border-color:rgba(34,197,94,.3)}
-.tag-yellow{background:rgba(245,158,11,.15);color:var(--yellow);border-color:rgba(245,158,11,.3)}
-.tag-purple{background:rgba(139,92,246,.15);color:#8b5cf6;border-color:rgba(139,92,246,.3)}
-footer{text-align:center;padding:2rem;font-family:var(--mono);font-size:11px;color:var(--muted);border-top:1px solid var(--border);margin-top:4rem}
-.hr{height:1px;background:var(--border);margin:2rem 0}
-.skill-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:12px;margin-top:1.5rem}
-.skill-card{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:1.2rem}
-.skill-icon{font-size:1.5rem;margin-bottom:.5rem}
-.skill-title{font-size:.9rem;font-weight:700;margin-bottom:.5rem}
-.skill-items{font-size:.8rem;color:var(--muted);line-height:1.6}
-.timeline{display:flex;flex-direction:column;gap:1.2rem}
-.tl-item{display:flex;gap:1rem}
-.tl-dot{width:10px;height:10px;border-radius:50%;background:var(--accent);flex-shrink:0;margin-top:6px}
-.tl-date{font-family:var(--mono);font-size:11px;color:var(--accent);margin-bottom:2px}
-.tl-title{font-size:.95rem;font-weight:700}
-.tl-sub{font-size:.85rem;color:var(--muted)}
-.veille-card{background:var(--surface);border:1px solid var(--border);border-radius:14px;overflow:hidden;margin-bottom:1rem}
-.veille-header{background:linear-gradient(135deg,rgba(59,130,246,.2),rgba(6,182,212,.1));padding:1.5rem;border-bottom:1px solid var(--border)}
-.veille-body{padding:1.5rem}
-.contact-links{display:flex;gap:1rem;flex-wrap:wrap;margin-top:1rem}
-.contact-btn{display:inline-flex;align-items:center;gap:8px;padding:10px 20px;border-radius:10px;font-size:13px;font-weight:600;border:1px solid var(--border);background:var(--surface);color:var(--text);transition:border-color .2s}
-.contact-btn:hover{border-color:var(--accent)}
-.stat-row{display:flex;gap:1rem;flex-wrap:wrap;margin:1.5rem 0}
-.stat{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:1rem 1.5rem;text-align:center}
-.stat-n{font-size:1.8rem;font-weight:700;color:var(--accent)}
-.stat-l{font-size:12px;color:var(--muted);margin-top:2px}
-.proj-grid{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
-@media(max-width:600px){.proj-grid{grid-template-columns:1fr}}
-.proj-num{font-family:var(--mono);font-size:10px;color:var(--accent);margin-bottom:4px}
-.proj-title{font-size:.95rem;font-weight:700;margin-bottom:.4rem}
-.proj-desc{font-size:.82rem;color:var(--muted);line-height:1.5;margin-bottom:.8rem}
-</style>
-
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Projets — Aswin PIRATHEEPAN</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800;900&family=Instrument+Sans:ital,wght@0,400;0,500;0,600;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/page.css" />
+  <style>
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      gap: 24px;
+      margin-top: 48px;
+    }
+    .project-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--r);
+      padding: 32px;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      transition: border-color .25s, transform .25s, box-shadow .25s;
+      position: relative;
+      overflow: hidden;
+    }
+    .project-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 2px;
+      background: linear-gradient(90deg, var(--cyan), transparent);
+      opacity: 0;
+      transition: opacity .3s;
+    }
+    .project-card:hover {
+      border-color: rgba(0,212,255,.2);
+      transform: translateY(-4px);
+      box-shadow: 0 16px 40px rgba(0,0,0,.4);
+    }
+    .project-card:hover::before { opacity: 1; }
+    .project-num {
+      font-family: var(--font-m);
+      font-size: .68rem;
+      color: var(--cyan);
+      letter-spacing: .14em;
+    }
+    .project-title {
+      font-family: var(--font-d);
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--text);
+      line-height: 1.3;
+    }
+    .project-desc {
+      font-size: .88rem;
+      color: var(--text-2);
+      line-height: 1.7;
+      flex: 1;
+    }
+    .project-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+    .project-tag {
+      font-family: var(--font-m);
+      font-size: .68rem;
+      padding: 4px 10px;
+      background: var(--cyan-dim);
+      color: var(--cyan);
+      border: 1px solid rgba(0,212,255,.2);
+      border-radius: 4px;
+    }
+    .project-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: .84rem;
+      font-weight: 600;
+      color: var(--cyan);
+      margin-top: 4px;
+      transition: gap .2s;
+    }
+    .project-link:hover { gap: 12px; }
+    .project-link.disabled {
+      color: var(--text-3);
+      cursor: default;
+      pointer-events: none;
+    }
+    .intro-text {
+      font-size: 1rem;
+      color: var(--text-2);
+      line-height: 1.7;
+      max-width: 600px;
+    }
+    @media (max-width: 600px) {
+      .projects-grid { grid-template-columns: 1fr; }
+    }
+  </style>
 </head>
 <body>
-<nav>
-  <span class="nav-logo">Aswin PIRATHEEPAN</span>
-  <div class="nav-links">
-    <a href="index.html">Accueil</a>
-    <a href="presentation.html">Présentation</a>
-    <a href="cv.html">CV</a>
-    <a href="projets.html" class="active">Projets</a>
-    <a href="e5.html">E5</a>
-    <a href="e6.html">E6</a>
-    <a href="veilles.html">Veilles</a>
-  </div>
-</nav>
 
-<div class="container">
-  <div class="section-tag">Réalisations</div>
-  <h1>Mes projets techniques</h1>
-  <p>Projets réalisés dans le cadre de mon BTS SIO SISR, en formation et en alternance.</p>
+  <nav class="navbar" id="navbar">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo">
+        <span class="logo-initials">AP</span>
+        <span class="logo-text">Aswin PIRATHEEPAN</span>
+      </a>
+      <button class="nav-toggle" id="navToggle" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html">Accueil</a></li>
+        <li><a href="index.html#parcours">Parcours</a></li>
+        <li><a href="index.html#alternance">Alternance</a></li>
+        <li><a href="index.html#veille">Veille</a></li>
+        <li><a href="e5.html">E5</a></li>
+        <li><a href="index.html#contact" class="btn-nav">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
 
-  <div class="hr"></div>
-  <div class="proj-grid">
-    <div class="card">
-      <div class="proj-num">01</div>
-      <div class="proj-title">Déploiement GLPI</div>
-      <div class="proj-desc">Installation et configuration d'un serveur GLPI sur Debian 13 avec inventaire automatique via agent GLPI. Pile LAMP, MariaDB, Apache.</div>
-      <span class="badge">GLPI</span><span class="badge tag-green">Debian</span><span class="badge">LAMP</span>
-    </div>
-    <div class="card">
-      <div class="proj-num">02</div>
-      <div class="proj-title">Windows Server — AD & GPO</div>
-      <div class="proj-desc">Déploiement d'un contrôleur de domaine Active Directory, création d'OUs, groupes, GPO et partages de fichiers NTFS.</div>
-      <span class="badge tag-purple">Windows Server</span><span class="badge tag-purple">AD DS</span><span class="badge">GPO</span>
-    </div>
-    <div class="card">
-      <div class="proj-num">03</div>
-      <div class="proj-title">Virtualisation VMware</div>
-      <div class="proj-desc">Création et gestion de machines virtuelles sous VMware Workstation : Debian, Windows Server, pfSense, Kali Linux.</div>
-      <span class="badge tag-green">VMware</span><span class="badge">pfSense</span><span class="badge">Kali</span>
-    </div>
-    <div class="card">
-      <div class="proj-num">04</div>
-      <div class="proj-title">Gestion Office 365</div>
-      <div class="proj-desc">Administration Azure Active Directory : création comptes, attribution licences Microsoft 365, gestion groupes SharePoint.</div>
-      <span class="badge">Azure AD</span><span class="badge">Office 365</span><span class="badge tag-yellow">M365</span>
-    </div>
-    <div class="card">
-      <div class="proj-num">05</div>
-      <div class="proj-title">Support IT & Incidents</div>
-      <div class="proj-desc">Traitement des incidents et demandes utilisateurs en alternance : diagnostic N1/N2, ticketing, documentation.</div>
-      <span class="badge tag-yellow">Support</span><span class="badge">Ticketing</span><span class="badge">N1/N2</span>
-    </div>
-    <div class="card">
-      <div class="proj-num">06</div>
-      <div class="proj-title">Portfolio GitHub Pages</div>
-      <div class="proj-desc">Conception et déploiement de ce portfolio en HTML/CSS sur GitHub Pages pour présenter mon parcours BTS SIO.</div>
-      <span class="badge">HTML/CSS</span><span class="badge tag-green">GitHub Pages</span>
+  <div class="page-hero">
+    <div class="container page-hero-inner">
+      <a href="index.html" class="back-link">← Retour au portfolio</a>
+      <h1>Mes réalisations</h1>
+      <p>Projets techniques réalisés dans le cadre de mon BTS SIO SISR, en formation et en alternance.</p>
+      <div class="page-meta">
+        <span class="meta-pill">🖥️ Systèmes</span>
+        <span class="meta-pill">🌐 Réseaux</span>
+        <span class="meta-pill">🔒 Sécurité</span>
+        <span class="meta-pill">📅 2024 — 2026</span>
+      </div>
     </div>
   </div>
-</div>
 
-<footer>Aswin PIRATHEEPAN · BTS SIO SISR · Paris School Of Technology and Business · 2024–2026</footer>
+  <div class="page-body">
+    <div class="container">
+      <p class="intro-text">Voici l'ensemble de mes réalisations techniques — projets réalisés en cours de formation et en milieu professionnel durant mon alternance.</p>
+
+      <div class="projects-grid">
+
+        <div class="project-card reveal">
+          <div class="project-num">01</div>
+          <div class="project-title">Déploiement Active Directory</div>
+          <div class="project-desc">Mise en place d'un annuaire Active Directory sous Windows Server 2019. Configuration du rôle AD DS, création d'unités d'organisation, gestion des utilisateurs, groupes et ordinateurs du domaine.</div>
+          <div class="project-tags">
+            <span class="project-tag">Windows Server</span>
+            <span class="project-tag">AD DS</span>
+            <span class="project-tag">DNS</span>
+          </div>
+          <a href="fiches/fiche-windows-server.html" class="project-link">Voir la documentation →</a>
+        </div>
+
+        <div class="project-card reveal">
+          <div class="project-num">02</div>
+          <div class="project-title">Application de GPO</div>
+          <div class="project-desc">Définition et déploiement de stratégies de groupe (GPO) pour uniformiser les environnements de travail et appliquer des règles de sécurité automatiquement à des groupes d'utilisateurs depuis un contrôleur de domaine.</div>
+          <div class="project-tags">
+            <span class="project-tag">GPO</span>
+            <span class="project-tag">Sécurité</span>
+            <span class="project-tag">Active Directory</span>
+          </div>
+          <a href="fiches/fiche-windows-server.html" class="project-link">Voir la documentation →</a>
+        </div>
+
+        <div class="project-card reveal">
+          <div class="project-num">03</div>
+          <div class="project-title">Virtualisation sous VMware Workstation</div>
+          <div class="project-desc">Création et gestion de machines virtuelles sous VMware Workstation Pro. Déploiement de Debian, Windows Server, Windows 10, pfSense et Kali Linux. Configuration des réseaux virtuels NAT, Bridge et Host-Only.</div>
+          <div class="project-tags">
+            <span class="project-tag">VMware</span>
+            <span class="project-tag">Linux</span>
+            <span class="project-tag">Windows</span>
+          </div>
+          <a href="fiches/fiche-vms-vmware.html" class="project-link">Voir la documentation →</a>
+        </div>
+
+        <div class="project-card reveal">
+          <div class="project-num">04</div>
+          <div class="project-title">Installation de GLPI sur Debian 13</div>
+          <div class="project-desc">Déploiement complet de GLPI sur Debian 13 incluant la pile LAMP (Apache, MariaDB, PHP), configuration du VirtualHost Apache, installation de l'agent GLPI pour l'inventaire automatique du parc informatique.</div>
+          <div class="project-tags">
+            <span class="project-tag">GLPI</span>
+            <span class="project-tag">Debian 13</span>
+            <span class="project-tag">LAMP</span>
+          </div>
+          <a href="fiches/fiche-glpi.html" class="project-link">Voir la documentation →</a>
+        </div>
+
+        <div class="project-card reveal">
+          <div class="project-num">05</div>
+          <div class="project-title">Gestion des comptes Office 365</div>
+          <div class="project-desc">Administration Azure Active Directory en alternance chez Alliance BTP et Clean Confiance. Création et gestion des comptes utilisateurs, attribution des licences Microsoft 365, gestion des groupes et droits SharePoint.</div>
+          <div class="project-tags">
+            <span class="project-tag">Azure AD</span>
+            <span class="project-tag">Office 365</span>
+            <span class="project-tag">Exchange Online</span>
+          </div>
+          <a href="fiches/fiche-office365.html" class="project-link">Voir la documentation →</a>
+        </div>
+
+        <div class="project-card reveal">
+          <div class="project-num">06</div>
+          <div class="project-title">Portfolio GitHub Pages</div>
+          <div class="project-desc">Conception et déploiement de ce portfolio en HTML, CSS et JavaScript sur GitHub Pages. Design dark premium, navigation responsive, section E5 avec tableau de synthèse et fiches détaillées par activité.</div>
+          <div class="project-tags">
+            <span class="project-tag">HTML/CSS</span>
+            <span class="project-tag">JavaScript</span>
+            <span class="project-tag">GitHub Pages</span>
+          </div>
+          <a href="https://github.com/syntifox" target="_blank" class="project-link">Voir le code source →</a>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div class="footer-left">
+        <a href="index.html" class="nav-logo">
+          <span class="logo-initials">AP</span>
+          <span class="logo-text">Aswin PIRATHEEPAN</span>
+        </a>
+        <p>BTS SIO SISR · Paris School Of Technology and Business</p>
+      </div>
+      <div class="footer-links">
+        <a href="index.html">Accueil</a>
+        <a href="index.html#parcours">Parcours</a>
+        <a href="index.html#alternance">Alternance</a>
+        <a href="index.html#veille">Veille</a>
+        <a href="e5.html">E5</a>
+        <a href="index.html#contact">Contact</a>
+      </div>
+      <div class="footer-right">
+        <p>© 2026 Aswin PIRATHEEPAN</p>
+        <p>Hébergé sur <a href="https://pages.github.com" target="_blank">GitHub Pages</a></p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
 </body>
 </html>
