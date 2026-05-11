@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Épreuve E5 — Aswin PIRATHEEPAN</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800;900&family=Instrument+Sans:ital,wght@0,400;0,500;0,600;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/page.css" />
+  <style>
+    .e5-info-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 16px;
+      margin: 40px 0;
+    }
+    .e5-info-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--rs);
+      padding: 20px;
+    }
+    .e5-info-label {
+      font-family: var(--font-m);
+      font-size: .65rem;
+      color: var(--text-3);
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      margin-bottom: 6px;
+    }
+    .e5-info-value {
+      font-size: .95rem;
+      font-weight: 600;
+      color: var(--text);
+    }
+    .e5-download-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 14px 28px;
+      background: var(--cyan);
+      color: var(--bg);
+      border-radius: var(--rs);
+      font-weight: 700;
+      font-size: .9rem;
+      transition: background .2s, transform .2s;
+      margin-bottom: 48px;
+    }
+    .e5-download-btn:hover {
+      background: #33dcff;
+      transform: translateY(-2px);
+    }
+    .e5-preview-wrapper {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--r);
+      overflow: hidden;
+      margin-top: 8px;
+    }
+    .e5-preview-header {
+      padding: 20px 28px;
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+    .e5-preview-title {
+      font-family: var(--font-d);
+      font-size: 1rem;
+      font-weight: 700;
+    }
+    .e5-preview-sub {
+      font-family: var(--font-m);
+      font-size: .72rem;
+      color: var(--text-3);
+    }
+    .e5-pdf-embed {
+      width: 100%;
+      height: 780px;
+      display: block;
+      border: none;
+      background: #1a1a1a;
+    }
+    .e5-pdf-fallback {
+      display: none;
+      padding: 48px;
+      text-align: center;
+      color: var(--text-2);
+      font-size: .9rem;
+    }
+    .e5-pdf-fallback a {
+      color: var(--cyan);
+      font-weight: 600;
+    }
+    .e5-caption {
+      text-align: center;
+      font-family: var(--font-m);
+      font-size: .72rem;
+      color: var(--text-3);
+      padding: 16px;
+      border-top: 1px solid var(--border);
+    }
+    @media (max-width: 720px) {
+      .e5-pdf-embed { height: 500px; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="navbar" id="navbar">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo">
+        <span class="logo-initials">AP</span>
+        <span class="logo-text">Aswin PIRATHEEPAN</span>
+      </a>
+      <button class="nav-toggle" id="navToggle" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html">Accueil</a></li>
+        <li><a href="index.html#parcours">Parcours</a></li>
+        <li><a href="index.html#alternance">Alternance</a></li>
+        <li><a href="index.html#veille">Veille</a></li>
+        <li><a href="projets.html">Projets</a></li>
+        <li><a href="e5.html" class="active-nav">E5</a></li>
+        <li><a href="index.html#contact" class="btn-nav">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <div class="page-hero">
+    <div class="container page-hero-inner">
+      <a href="index.html" class="back-link">← Retour au portfolio</a>
+      <h1>Épreuve E5 — BTS SIO</h1>
+      <p>Tableau de synthèse des compétences et réalisations professionnelles développées au cours de mon BTS SIO SISR.</p>
+      <div class="page-meta">
+        <span class="meta-pill">📋 Tableau de synthèse</span>
+        <span class="meta-pill">🎓 BTS SIO SISR</span>
+        <span class="meta-pill">📅 Session 2026</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- CORPS -->
+  <div class="page-body">
+    <div class="container">
+
+      <!-- INFOS -->
+      <div class="e5-info-grid">
+        <div class="e5-info-card">
+          <div class="e5-info-label">Épreuve</div>
+          <div class="e5-info-value">BTS SIO — E5</div>
+        </div>
+        <div class="e5-info-card">
+          <div class="e5-info-label">Type</div>
+          <div class="e5-info-value">Tableau de synthèse</div>
+        </div>
+        <div class="e5-info-card">
+          <div class="e5-info-label">Formation</div>
+          <div class="e5-info-value">BTS SIO SISR</div>
+        </div>
+        <div class="e5-info-card">
+          <div class="e5-info-label">Établissement</div>
+          <div class="e5-info-value">Paris School T&amp;B</div>
+        </div>
+        <div class="e5-info-card">
+          <div class="e5-info-label">Session</div>
+          <div class="e5-info-value">2026</div>
+        </div>
+        <div class="e5-info-card">
+          <div class="e5-info-label">Réalisations</div>
+          <div class="e5-info-value">13 activités</div>
+        </div>
+      </div>
+
+      <!-- BOUTON TÉLÉCHARGER -->
+      <a href="assets/tableau-synthese-E5.pdf" class="e5-download-btn" download>
+        📥 Télécharger le tableau de synthèse (PDF)
+      </a>
+
+      <!-- APERÇU PDF -->
+      <div class="section-label" style="margin-bottom:16px;">Tableau de synthèse</div>
+      <h2 style="font-family:var(--font-d);font-size:1.4rem;font-weight:700;margin-bottom:8px;">Tableau de synthèse des compétences</h2>
+      <p style="color:var(--text-2);font-size:.9rem;margin-bottom:24px;">Ce tableau récapitule l'ensemble des compétences et situations professionnelles développées au cours de mon BTS SIO, dans le cadre de l'épreuve E5.</p>
+
+      <div class="e5-preview-wrapper reveal">
+        <div class="e5-preview-header">
+          <div>
+            <div class="e5-preview-title">Tableau de synthèse E5 — PIRATHEEPAN Aswin</div>
+            <div class="e5-preview-sub">BTS SIO SISR · Session 2026 · PST&B Paris</div>
+          </div>
+          <a href="assets/tableau-synthese-E5.pdf" class="btn btn-outline btn-sm" download>↓ Télécharger</a>
+        </div>
+        <iframe
+          class="e5-pdf-embed"
+          src="assets/tableau-synthese-E5.pdf"
+          title="Tableau de synthèse E5"
+          loading="lazy">
+          <div class="e5-pdf-fallback">
+            Votre navigateur ne supporte pas l'affichage de PDF.<br/>
+            <a href="assets/tableau-synthese-E5.pdf" download>Cliquez ici pour télécharger le tableau de synthèse</a>
+          </div>
+        </iframe>
+        <div class="e5-caption">// Cliquez sur le PDF pour l'agrandir · Utilisez le bouton ci-dessus pour télécharger</div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div class="footer-left">
+        <a href="index.html" class="nav-logo">
+          <span class="logo-initials">AP</span>
+          <span class="logo-text">Aswin PIRATHEEPAN</span>
+        </a>
+        <p>BTS SIO SISR · Paris School Of Technology and Business</p>
+      </div>
+      <div class="footer-links">
+        <a href="index.html">Accueil</a>
+        <a href="index.html#parcours">Parcours</a>
+        <a href="index.html#alternance">Alternance</a>
+        <a href="index.html#veille">Veille</a>
+        <a href="projets.html">Projets</a>
+        <a href="index.html#contact">Contact</a>
+      </div>
+      <div class="footer-right">
+        <p>© 2026 Aswin PIRATHEEPAN</p>
+        <p>Hébergé sur <a href="https://pages.github.com" target="_blank">GitHub Pages</a></p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
