@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Engagement Étudiant — Aswin PIRATHEEPAN</title>
+    <link rel="icon" type="image/x-icon" href="favicon.ico" />
+  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+  <link rel="apple-touch-icon" href="favicon.ico" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800;900&family=Instrument+Sans:ital,wght@0,400;0,500;0,600;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/page.css" />
+  <style>
+    body { padding-top: 68px; }
+
+    .eng-intro {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--r);
+      padding: 36px 40px;
+      margin-bottom: 48px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+      align-items: center;
+    }
+    @media(max-width:720px){ .eng-intro { grid-template-columns:1fr; padding:24px; } }
+
+    .eng-intro-left h2 {
+      font-family: var(--font-d);
+      font-size: 1.8rem;
+      font-weight: 800;
+      letter-spacing: -.03em;
+      color: var(--text);
+      margin-bottom: 8px;
+    }
+    .eng-intro-left .asso-sub {
+      color: var(--cyan);
+      font-family: var(--font-m);
+      font-size: .78rem;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      margin-bottom: 16px;
+    }
+    .eng-intro-left p {
+      color: var(--text-2);
+      font-size: .92rem;
+      line-height: 1.8;
+    }
+    .eng-intro-right {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .eng-stat {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      padding: 14px 18px;
+      background: var(--bg-3);
+      border: 1px solid var(--border);
+      border-radius: var(--rs);
+    }
+    .eng-stat-icon { font-size: 1.4rem; flex-shrink: 0; }
+    .eng-stat-num {
+      font-family: var(--font-d);
+      font-size: 1.2rem;
+      font-weight: 800;
+      color: var(--cyan);
+      letter-spacing: -.02em;
+    }
+    .eng-stat-label {
+      font-size: .82rem;
+      color: var(--text-2);
+    }
+
+    .eng-missions-title {
+      font-family: var(--font-d);
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: var(--text);
+      margin-bottom: 24px;
+    }
+
+    .eng-missions {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 20px;
+      margin-bottom: 56px;
+    }
+    .eng-mission-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--r);
+      padding: 28px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      transition: border-color .25s, transform .25s;
+      position: relative;
+      overflow: hidden;
+    }
+    .eng-mission-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 2px;
+      background: linear-gradient(90deg, var(--cyan), transparent);
+      opacity: 0;
+      transition: opacity .3s;
+    }
+    .eng-mission-card:hover {
+      border-color: rgba(0,212,255,.25);
+      transform: translateY(-3px);
+    }
+    .eng-mission-card:hover::before { opacity: 1; }
+    .eng-mission-icon { font-size: 2rem; }
+    .eng-mission-title {
+      font-family: var(--font-d);
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--text);
+      line-height: 1.3;
+    }
+    .eng-mission-desc {
+      font-size: .86rem;
+      color: var(--text-2);
+      line-height: 1.7;
+      flex: 1;
+    }
+    .eng-mission-tag {
+      display: inline-flex;
+      font-family: var(--font-m);
+      font-size: .68rem;
+      padding: 3px 9px;
+      background: var(--cyan-dim);
+      color: var(--cyan);
+      border: 1px solid rgba(0,212,255,.2);
+      border-radius: 4px;
+      width: fit-content;
+    }
+
+    .eng-competences {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--r);
+      padding: 36px 40px;
+      margin-bottom: 48px;
+    }
+    @media(max-width:720px){ .eng-competences { padding: 24px; } }
+    .eng-competences h3 {
+      font-family: var(--font-d);
+      font-size: 1.1rem;
+      font-weight: 700;
+      margin-bottom: 20px;
+      color: var(--text);
+    }
+    .comp-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+      gap: 12px;
+    }
+    .comp-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      padding: 14px 16px;
+      background: var(--bg-3);
+      border: 1px solid var(--border);
+      border-radius: var(--rs);
+    }
+    .comp-item-dot {
+      width: 8px;
+      height: 8px;
+      background: var(--cyan);
+      border-radius: 50%;
+      flex-shrink: 0;
+      margin-top: 5px;
+      box-shadow: 0 0 8px var(--cyan-glow);
+    }
+    .comp-item-text {
+      font-size: .84rem;
+      color: var(--text-2);
+      line-height: 1.5;
+    }
+    .comp-item-text strong { color: var(--text); display: block; margin-bottom: 2px; }
+
+    .eng-bilan {
+      background: linear-gradient(135deg, rgba(0,212,255,.07) 0%, rgba(0,229,160,.04) 100%);
+      border: 1px solid rgba(0,212,255,.2);
+      border-radius: var(--r);
+      padding: 36px 40px;
+    }
+    @media(max-width:720px){ .eng-bilan { padding: 24px; } }
+    .eng-bilan h3 {
+      font-family: var(--font-d);
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--text);
+      margin-bottom: 14px;
+    }
+    .eng-bilan p {
+      color: var(--text-2);
+      font-size: .92rem;
+      line-height: 1.8;
+    }
+    .eng-bilan p strong { color: var(--text); }
+  </style>
+</head>
+<body>
+
+  <nav class="navbar" id="navbar">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo">
+        <span class="logo-initials">AP</span>
+        <span class="logo-text">Aswin PIRATHEEPAN</span>
+      </a>
+      <button class="nav-toggle" id="navToggle" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html">Accueil</a></li>
+        <li><a href="index.html#parcours">Parcours</a></li>
+        <li><a href="index.html#alternance">Alternance</a></li>
+        <li><a href="index.html#veille">Veille</a></li>
+        <li><a href="projets.html">Projets</a></li>
+        <li><a href="e5.html">E5</a></li>
+        <li><a href="e6.html">E6</a></li>
+        <li><a href="index.html#contact" class="btn-nav">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <div class="page-hero">
+    <div class="container page-hero-inner">
+      <a href="index.html" class="back-link">← Retour au portfolio</a>
+      <h1>Engagement Étudiant</h1>
+      <p>Membre actif de l'association <strong>Origami</strong> à Aulnay-sous-Bois — actions solidaires, animation locale et organisation d'événements pour les jeunes.</p>
+      <div class="page-meta">
+        <span class="meta-pill">🤝 Solidarité</span>
+        <span class="meta-pill">🎮 Animation</span>
+        <span class="meta-pill">⚽ Événements</span>
+        <span class="meta-pill">📍 Aulnay-sous-Bois</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- CORPS -->
+  <div class="page-body">
+    <div class="container">
+
+      <!-- PRÉSENTATION ASSO -->
+      <div class="eng-intro">
+        <div class="eng-intro-left">
+          <div class="asso-sub">Association · Aulnay-sous-Bois (93)</div>
+          <h2>Association Origami</h2>
+          <p>Origami est une association de quartier basée à <strong>Aulnay-sous-Bois</strong>, en Seine-Saint-Denis. Elle agit sur plusieurs fronts : actions solidaires de terrain, animation culturelle et sportive, et organisation d'événements fédérateurs pour les jeunes de la ville.</p>
+          <p style="margin-top:12px;">En tant que membre actif, j'ai participé à l'ensemble des missions de l'association, contribuant à créer du lien social et à animer la vie de quartier.</p>
+        </div>
+        <div class="eng-intro-right">
+          <div class="eng-stat">
+            <div class="eng-stat-icon">📍</div>
+            <div>
+              <div class="eng-stat-num">Aulnay-sous-Bois</div>
+              <div class="eng-stat-label">Seine-Saint-Denis (93)</div>
+            </div>
+          </div>
+          <div class="eng-stat">
+            <div class="eng-stat-icon">🤝</div>
+            <div>
+              <div class="eng-stat-num">3 missions</div>
+              <div class="eng-stat-label">Maraudes · LDC · Tournois gaming</div>
+            </div>
+          </div>
+          <div class="eng-stat">
+            <div class="eng-stat-icon">🎯</div>
+            <div>
+              <div class="eng-stat-num">Public jeune</div>
+              <div class="eng-stat-label">Animations et événements locaux</div>
+            </div>
+          </div>
+          <div class="eng-stat">
+            <div class="eng-stat-icon">📅</div>
+            <div>
+              <div class="eng-stat-num">2024 — 2026</div>
+              <div class="eng-stat-label">Pendant mon BTS SIO</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- MISSIONS -->
+      <div class="eng-missions-title">Mes activités au sein de l'association</div>
+      <div class="eng-missions">
+
+        <div class="eng-mission-card">
+          <div class="eng-mission-icon">🌙</div>
+          <div class="eng-mission-title">Maraudes solidaires</div>
+          <div class="eng-mission-desc">Participation aux maraudes nocturnes organisées par l'association. Distribution de repas, boissons chaudes et produits d'hygiène aux personnes en situation de précarité dans les rues d'Aulnay-sous-Bois et des communes voisines. Ces actions m'ont appris l'écoute, l'empathie et le travail en équipe dans des conditions exigeantes.</div>
+          <span class="eng-mission-tag">Solidarité</span>
+        </div>
+
+        <div class="eng-mission-card">
+          <div class="eng-mission-icon">⚽</div>
+          <div class="eng-mission-title">Diffusion de la Ligue des Champions</div>
+          <div class="eng-mission-desc">Organisation et gestion des soirées de diffusion des matchs de la Ligue des Champions UEFA pour les habitants du quartier. Installation du matériel audiovisuel, accueil du public, animation des soirées. Ces événements rassemblaient des dizaines de personnes et créaient une vraie dynamique de quartier autour du sport.</div>
+          <span class="eng-mission-tag">Animation</span>
+        </div>
+
+        <div class="eng-mission-card">
+          <div class="eng-mission-icon">🎮</div>
+          <div class="eng-mission-title">Tournois de jeux vidéo</div>
+          <div class="eng-mission-desc">Organisation de tournois de jeux vidéo destinés aux jeunes de la ville d'Aulnay-sous-Bois. Gestion logistique complète : sélection des jeux, mise en place du matériel (consoles, écrans, connexion réseau), création des brackets de tournoi, animation des phases éliminatoires et remise des prix. Ces événements visaient à proposer un cadre structuré et positif pour les jeunes du quartier.</div>
+          <span class="eng-mission-tag">Gaming · Jeunesse</span>
+        </div>
+
+      </div>
+
+      <!-- COMPÉTENCES DÉVELOPPÉES -->
+      <div class="eng-competences">
+        <h3>Compétences développées</h3>
+        <div class="comp-grid">
+          <div class="comp-item">
+            <div class="comp-item-dot"></div>
+            <div class="comp-item-text">
+              <strong>Organisation d'événements</strong>
+              Planification, logistique et coordination pour les tournois et soirées LDC
+            </div>
+          </div>
+          <div class="comp-item">
+            <div class="comp-item-dot"></div>
+            <div class="comp-item-text">
+              <strong>Travail en équipe</strong>
+              Coordination avec les autres membres de l'association sur chaque mission
+            </div>
+          </div>
+          <div class="comp-item">
+            <div class="comp-item-dot"></div>
+            <div class="comp-item-text">
+              <strong>Sens du service</strong>
+              Accompagnement des personnes en difficulté lors des maraudes solidaires
+            </div>
+          </div>
+          <div class="comp-item">
+            <div class="comp-item-dot"></div>
+            <div class="comp-item-text">
+              <strong>Animation et communication</strong>
+              Gestion du public, prise de parole, animation des soirées et tournois
+            </div>
+          </div>
+          <div class="comp-item">
+            <div class="comp-item-dot"></div>
+            <div class="comp-item-text">
+              <strong>Gestion technique</strong>
+              Installation et configuration du matériel audiovisuel et réseau pour les événements
+            </div>
+          </div>
+          <div class="comp-item">
+            <div class="comp-item-dot"></div>
+            <div class="comp-item-text">
+              <strong>Engagement citoyen</strong>
+              Implication bénévole régulière dans la vie associative et sociale du quartier
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- BILAN -->
+      <div class="eng-bilan">
+        <h3>✦ Ce que cet engagement m'a apporté</h3>
+        <p>Mon engagement au sein de l'association <strong>Origami</strong> m'a permis de développer des compétences humaines et organisationnelles complémentaires à ma formation technique en BTS SIO. Savoir travailler en équipe, gérer des imprévus, s'adapter à des publics différents — des personnes en précarité lors des maraudes aux jeunes passionnés de gaming lors des tournois — sont des qualités directement utiles dans le monde professionnel.</p>
+        <p style="margin-top:12px;">Cet engagement m'a aussi appris que la <strong>technologie peut être un vecteur de lien social</strong> : organiser des tournois de jeux vidéo pour les jeunes du quartier, c'est utiliser le numérique pour rassembler et créer de la cohésion. Une vision que je porte aussi dans mon futur métier d'administrateur systèmes.</p>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div class="footer-left">
+        <a href="index.html" class="nav-logo">
+          <span class="logo-initials">AP</span>
+          <span class="logo-text">Aswin PIRATHEEPAN</span>
+        </a>
+        <p>BTS SIO SISR · Paris School Of Technology and Business</p>
+      </div>
+      <div class="footer-links">
+        <a href="index.html">Accueil</a>
+        <a href="index.html#parcours">Parcours</a>
+        <a href="index.html#alternance">Alternance</a>
+        <a href="projets.html">Projets</a>
+        <a href="e5.html">E5</a>
+        <a href="e6.html">E6</a>
+        <a href="index.html#contact">Contact</a>
+      </div>
+      <div class="footer-right">
+        <p>© 2026 Aswin PIRATHEEPAN</p>
+        <p>Hébergé sur <a href="https://pages.github.com" target="_blank">GitHub Pages</a></p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
